@@ -30,9 +30,17 @@ mixin page(name, title)
 
       a.top-button: img(src='/images/2x_Top_Button.png')
       .footer
-        .lets-connect-container
-          .if-work-well Think we'd work well together?
-          img.lets-connect(src='/images/2x_Lets_Connect.png')
+        .footer-top-section
+          .lets-connect-container
+            .if-work-well Think we'd work well together?
+            img.lets-connect(src='/images/2x_Lets_Connect.png')
+          .contact-info
+            p
+              img.phone(src='/images/2x_Phone.png')
+              | (916) 549-0849
+            p
+              img.email(src='/images/2x_Email.png')
+              | angelicadesign1@gmail.com
         .footer-bottom-section
           .legal Website designed by Angelica Design ©2015. All Rights Reserved.
           .social-icons
@@ -43,7 +51,6 @@ mixin page(name, title)
             a.social-button(href='http://www.pinterest.com/AngelicaDesign1/'): img(src='/images/2x_Footer_Pinterest.png')
             a.social-button(href='http://www.facebook.com/angelicadesign1'): img(src='/images/2x_Footer_Facebook.png')
             a.social-button(href=''): img(src='/images/2x_Footer_Share.png')
-          .clearfix
 
       // build:js /scripts/main.min.js
       script(src='/scripts/main.js')

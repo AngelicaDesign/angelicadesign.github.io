@@ -175,7 +175,7 @@ h1 {
   background: $brand-color;
   padding: 0 95px;
 
-  .lets-connect-container {
+  .lets-connect-container, .contact-info {
     padding: 75px 0;
   }
 
@@ -191,11 +191,28 @@ h1 {
     width: 495px;
   }
 
+  .contact-info {
+    font-style: 26px;
+    font-family: $quicksand;
+    font-weight: bold;
+    p {
+      margin: 17px 0;
+    }
+    .phone, .email {
+      width: 23px;
+      margin-right: 17px;
+      vertical-align: middle;
+    }
+  }
+
   .footer-bottom-section {
     padding: 40px 0;
     border-top: 1px solid white;
-    font-size: 16px;
     color: $brand-dark-color;
+  }
+
+  .legal {
+    font-size: 16px;
   }
 
   .social-icons {
@@ -205,5 +222,16 @@ h1 {
     .social-button img {
       height: 28px;
     }
+  }
+}
+
+
+.footer-bottom-section, .footer-top-section {
+  @include outer-container;
+  .lets-connect-container, .legal {
+    @include span-columns(7);
+  }
+  .contact-info, .social-icons {
+    @include span-columns(5);
   }
 }
