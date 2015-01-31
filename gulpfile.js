@@ -138,7 +138,7 @@ gulp.task('html', function () {
         path.basename = 'index';
     }))
     // Minify Any HTML
-    // .pipe($.if('*.html', $.minifyHtml()))
+    .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));

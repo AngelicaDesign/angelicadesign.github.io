@@ -1,5 +1,7 @@
 (function () {
   'use strict';
   var $ = document.querySelector.bind(document);
-  console.log($('html'));
+  window.addEventListener('scroll', function (e) {
+    $('.nav').classList.toggle('hide', scrollY < $('.header').offsetHeight - $('.nav').offsetHeight);
+  });
 })();

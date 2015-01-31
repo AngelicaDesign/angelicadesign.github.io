@@ -6,8 +6,10 @@ mixin link(name)
 
 mixin nav(name)
   - var CURRENT_PAGE = name
-  nav
-    p= 'CURRENT_PAGE: ' + CURRENT_PAGE
+  .nav.hide
+    img.small-logo(src='/images/2x_Small_Logo.png')
     ul
-      li: +link('') Home
-      li: +link('about') About
+      li: +link('') portfolio
+      li: +link('about') about
+      li: +link('contact') contact
+      li: +link('blog') blog

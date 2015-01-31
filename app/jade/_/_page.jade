@@ -16,8 +16,35 @@ mixin page(name, title)
       link(rel='stylesheet', href='/styles/main.css')
 
     body
+      .header
+         .menu-button
+         img.logo(src='/images/2x_Main_Logo.png')
+         ul
+           li ui/ux
+           li print
+           li branding
+           li illustration
       +nav(name)
+
       block
+
+      a.top-button: img(src='/images/2x_Top_Button.png')
+      .footer
+        .lets-connect-container
+          .if-work-well Think we'd work well together?
+          img.lets-connect(src='/images/2x_Lets_Connect.png')
+        .footer-bottom-section
+          .legal Website designed by Angelica Design ©2015. All Rights Reserved.
+          .social-icons
+            a.social-button(href='http://www.linkedin.com/pub/angelica-gutierrez/34/631/73b'): img(src='/images/2x_Footer_Linkedin.png')
+            a.social-button(href='https://www.behance.net/angelicadesign1'): img(src='/images/2x_Footer_Behance.png')
+            a.social-button(href='https://dribbble.com/AngelicaDesign'): img(src='/images/2x_Footer_Dribbble.png')
+            a.social-button(href='http://instagram.com/angelica_design/'): img(src='/images/2x_Footer_Instagram.png')
+            a.social-button(href='http://www.pinterest.com/AngelicaDesign1/'): img(src='/images/2x_Footer_Pinterest.png')
+            a.social-button(href='http://www.facebook.com/angelicadesign1'): img(src='/images/2x_Footer_Facebook.png')
+            a.social-button(href=''): img(src='/images/2x_Footer_Share.png')
+          .clearfix
+
       // build:js /scripts/main.min.js
       script(src='/scripts/main.js')
       script(src='/scripts/main-helper.js')
