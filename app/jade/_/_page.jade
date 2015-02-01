@@ -25,8 +25,8 @@ mixin page(name, title)
            li branding
            li illustration
       +nav(name)
-
-      block
+      div(class=name+'-page')
+        block
 
       a.top-button: img(src='/images/2x_Top_Button.png')
       .footer

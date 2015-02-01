@@ -1,0 +1,211 @@
+* { box-sizing: border-box; }
+
+
+$brand-color: #32c9c2;
+$brand-dark-color: #2e7c7d;
+$medium-color: #ccc;
+$light-color: #d0d2d3;
+$page-padding: 95px;
+
+$quicksand: 'Quicksand', sans-serif;
+$open-sans: 'Open Sans', Helvetica, sans-serif;
+
+html {
+  font-family: $open-sans;
+  font-size: 28px;
+  font-weight: 200;
+  color: $light-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-weight: bold;
+}
+
+@mixin clearfix {
+ *zoom:1;
+ &:before, &:after { content: " "; display: table; }
+ &:after { clear: both; }
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.header {
+  padding: 100px 0;
+  text-align: center;
+  ul {
+    margin-top: 9px;
+    color: $medium-color;
+
+    font-family: $quicksand;
+    font-weight: bold;
+    font-size: 26px;
+  }
+  li {
+    display: inline-block;
+    &:before {
+      font-size: 15px;
+      content: "\2022"; // bullet icon
+      padding: 8px;
+      display: inline-block; // makes translate work
+      transform: translateY(-2%);
+    }
+    &:first-child:before {
+      content: ""; // bullet icon
+      padding: 0;
+    }
+  }
+  li:first-child {
+    margin-left: 0;
+  }
+}
+
+.logo {
+  width: 450px;
+}
+
+
+.menu-button {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: url(/images/2x_menu.png) no-repeat center center;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+}
+
+.nav {
+  $padding: 42px;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: $padding 0;
+  background: white; // because this element will cover others
+  .small-logo {
+    height: 27px;
+    display: block;
+    margin-left: $padding;
+  }
+  ul {
+    display: block;
+    position: absolute;
+    right: $padding;
+    top: 50%;
+     // We want 50% but it doesn't look centered that way
+    transform: translateY(-56%);
+  }
+  li {
+    list-style: none;
+    display: inline;
+    &:before {
+      content: "\2022"; // bullet icon
+      padding: 8px;
+      display: inline-block; // makes translate work
+      transform: translateY(5%);
+    }
+    &:first-child:before {
+      content: ""; // bullet icon
+    }
+  }
+  a {
+    text-decoration: none;
+    font-family: $quicksand;
+    font-weight: bold;
+    color: $medium-color;
+    // margin-left: 20px;
+  }
+}
+
+
+.top-button img {
+  width: 53px;
+  position: absolute;
+  right: 40px;
+  transform: translateY(-80px);
+}
+
+
+
+.heading {
+  font-weight: bold;
+  font-size: 38px;
+  text-transform: uppercase;
+  font-family: $quicksand;
+  color: $brand-color;
+  margin-bottom: 32px;
+}
+
+p {
+  line-height: 1.5;
+  margin: 32px 0;
+}
+
+
+
+.footer {
+  color: white;
+  background: $brand-color;
+  padding: 0 $page-padding;
+
+  .lets-connect-container, .contact-info {
+    padding: 75px 0;
+  }
+
+  .if-work-well {
+    font-family: $quicksand;
+    font-weight: bold;
+    font-size: 32px;
+    margin-left: -7px;
+    margin-bottom: 20px;
+  }
+
+  .lets-connect {
+    width: 495px;
+  }
+
+  .contact-info {
+    font-style: 26px;
+    font-family: $quicksand;
+    font-weight: bold;
+    p {
+      margin: 15px 0;
+    }
+    .phone, .email {
+      width: 23px;
+      margin-right: 17px;
+      vertical-align: middle;
+    }
+  }
+
+  .footer-bottom-section {
+    padding: 40px 0;
+    border-top: 1px solid white;
+    color: $brand-dark-color;
+  }
+
+  .legal {
+    font-size: 16px;
+  }
+
+  .social-icons {
+    .social-button {
+      margin-right: 20px;
+    }
+    .social-button img {
+      height: 28px;
+    }
+  }
+}
+
+.footer-bottom-section, .footer-top-section {
+  @include outer-container;
+  .lets-connect-container, .legal {
+    @include span-columns(7);
+  }
+  .contact-info, .social-icons {
+    @include span-columns(5);
+  }
+}

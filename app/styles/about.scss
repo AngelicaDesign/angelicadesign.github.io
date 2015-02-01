@@ -1,0 +1,22 @@
+.about-page {
+
+
+  section {
+    padding: 0 $page-padding;
+  }
+
+  section {
+    @include outer-container;
+  }
+  .main {
+    @include span-columns(8);
+  }
+  .sidebar {
+    @include span-columns(4);
+  }
+
+  img {
+    width: 100%;
+  }
+
+}
