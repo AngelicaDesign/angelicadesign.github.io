@@ -92,11 +92,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.top-button img {
+.to-top-button {
+  // z-index: 1000;
+  background-image: url(/images/2x_Top_Button.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 53px;
-  position: absolute;
+  height: 53px;
+  position: fixed;
   right: 40px;
-  transform: translateY(-80px);
+  bottom: 40px;
+  &:hover {
+    height: 90px; // A few pixels taller actual image height
+    background-image: url(/images/2x_Top_Button_Active.png);
+  }
 }
 
 
