@@ -6,14 +6,13 @@
 .home-page .main {
 
   .projects {
-    overflow: auto;
+    @include outer-container(100%);
   }
-  .project {
+  .project img {
     background: linear-gradient(to bottom right, $medium-color, white);
     height: 25vw;
     width: 25vw;
     float: left;
-    &:after { @include clearfix; }
   }
 
   .section {
