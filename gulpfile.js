@@ -105,7 +105,10 @@ gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
   var LOCALS = { CONFIG: config };
 
-  return gulp.src('app/jade/*.jade')
+  return gulp.src([
+      'app/jade/**/*.jade',
+      '!app/jade/_'
+    ])
     .pipe($.jade({ pretty: true, locals: LOCALS }))
     .pipe(assets)
     // Concatenate And Minify JavaScript
