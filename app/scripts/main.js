@@ -28,6 +28,7 @@
       $('.contact-page').toggleClass('hide');
       $('body').toggleClass('no-scroll');
       $('.nav').toggleClass('force-show');
+      $('.contact-link').toggleClass('active');
       return false;
     });
 

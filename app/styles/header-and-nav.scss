@@ -54,9 +54,6 @@
 // ---
 
 .nav {
-  &.force-show {
-    display: block !important;
-  }
 
   $padding: 42px;
 
@@ -97,5 +94,8 @@
     font-weight: bold;
     color: $medium-color;
     // margin-left: 20px;
+  }
+  a.active {
+    color: $brand-color;
   }
 }
