@@ -6,9 +6,20 @@
 
 // Styles used throughout the site
 @import "global"; // global styles, mixins, and settings that are used in imports shown below
-@import "header-nav";
-@import "footer";
+@import "header-and-nav";
+@import "footer-and-contact";
 
 // Page-specific styles
 @import "home";
 @import "about";
+
+// Layers
+.to-top-button {
+  z-index: 1000;
+}
+.contact-page {
+  z-index: 2000;
+}
+.nav {
+  z-index: 3000;
+}

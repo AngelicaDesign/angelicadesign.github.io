@@ -54,6 +54,10 @@
 // ---
 
 .nav {
+  &.force-show {
+    display: block !important;
+  }
+
   $padding: 42px;
 
   position: relative;

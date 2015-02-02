@@ -1,7 +1,8 @@
 - var HOME_PAGE = 'home'
 
 mixin link(name)
-  a(href='/'+name, class=(CURRENT_PAGE==name || (CURRENT_PAGE==HOME_PAGE && name=='')) ? 'active':'')
+  - var isActive = (CURRENT_PAGE==name || (CURRENT_PAGE==HOME_PAGE && name=='')) ? 'active':''
+  a(href='/'+name, class=isActive + ' ' + name + '-link')
     block
 
 mixin nav(name)

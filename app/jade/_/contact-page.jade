@@ -1,0 +1,15 @@
+.contact-page.hide
+  .content
+    .if-work-well Ready to make things happen?
+    img.lets-connect(src='/images/2x_Lets_Connect.png')
+    .contact-info
+      p
+        img.phone(src='/images/2x_Phone.png')
+        = CONFIG.phone
+      p
+        img.email(src='/images/2x_Email.png')
+        = CONFIG.email
+    .social-buttons
+      each url, name in CONFIG.social
+        a.social-button(class=name, href=url)
+    .copyright= CONFIG.copyright

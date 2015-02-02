@@ -69,6 +69,13 @@ body {
 //   background: black;
 // }
 
+// Use this in JS to prevent scrolling
+body.no-scroll
+{
+  height: 100%;
+  overflow: hidden;
+}
+
 a {
   color: $brand-color;
   text-decoration: none;
@@ -93,7 +100,6 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .to-top-button {
-  // z-index: 1000;
   background-image: url(/images/2x_Top_Button.png);
   background-size: contain;
   background-repeat: no-repeat;

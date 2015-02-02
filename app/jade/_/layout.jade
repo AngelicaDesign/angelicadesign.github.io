@@ -15,6 +15,8 @@ html(lang='en')
     link(rel='stylesheet', href='/styles/main.css')
 
   body(class=NAME+'-page')
+    include contact-page
+
     block header
       include _nav
       +nav(NAME)
@@ -37,8 +39,8 @@ html(lang='en')
             img.email(src='/images/2x_Email.png')
             = CONFIG.email
       .footer-bottom-section
-        .legal Website designed by Angelica Design ©2015. All Rights Reserved.
-        .social-icons
+        .copyright= CONFIG.copyright
+        .social-buttons
           each url, name in CONFIG.social
             a.social-button(class=name, href=url)
 
