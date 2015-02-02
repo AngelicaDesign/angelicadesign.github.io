@@ -10,11 +10,80 @@ $page-padding: 95px;
 $quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', Helvetica, sans-serif;
 
-html {
+
+
+
+
+@function capitalize($string) {
+  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+$social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
+
+@mixin resize-wide-share-button($size) {
+  .share.social-button {
+    $orig-width: 178px;
+    $orig-height: 56px;
+    $height: $size;
+    height: $height;
+    // calculate width by scaling original width down proportionally
+    width: $height * ($orig-width / $orig-height);
+  }
+}
+@mixin social-buttons($size, $file-prefix) {
+  @each $item in $social {
+    $name: capitalize($item);
+    .#{$item}.social-button {
+      height: $size;
+      width: $size;
+      background-image: url("/images/#{$file-prefix}#{$name}.png");
+      &:hover {
+        background-image: url("/images/#{$file-prefix}#{$name}_Active.png");
+      }
+    }
+  }
+}
+
+.social-button {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+// @mixin share-button($size) {
+//   $orig-width: 178px;
+//   $orig-height: 56px;
+//   $height: $size;
+//   height: $height;
+//   // calculate width by scaling original width down proportionally
+//   width: $height * ($orig-width / $orig-height);
+// }
+// .footer .social-button.share {
+//   @include share-button(28px);
+// }
+
+
+
+
+
+body {
   font-family: $open-sans;
   font-size: 28px;
   font-weight: 200;
   color: $light-color;
+  width: 1366px;
+  background: white;
+  position: relative;
+}
+html {
+  background: black;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+  &:hover {
+    color: $brand-dark-color;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -139,7 +208,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.7;
   margin: 32px 0;
 }
 
@@ -190,14 +259,13 @@ p {
     font-size: 16px;
   }
 
-  .social-icons {
-    .social-button {
-      margin-right: 20px;
-    }
-    .social-button img {
-      height: 28px;
-    }
+  @include social-buttons($size: 28px, $file-prefix: "2x_Footer_");
+  @include resize-wide-share-button(28px);
+
+  .social-button {
+    margin-right: 20px;
   }
+
 }
 
 .footer-bottom-section, .footer-top-section {

@@ -1,22 +1,68 @@
 .about-page {
 
+  .heading {
+    margin-top: $page-padding;
+  }
 
-  section {
+  .hero {
     padding: 0 $page-padding;
+    background: #f2f2f2;
   }
 
-  section {
+  .self-image {
+    display: block;
+  }
+
+  .content-wrapper {
+    padding: 0 $page-padding;
+    padding-bottom: 145px;
+  }
+
+  .award {
+    width: 80%;
+    margin-left: -8px;
+    margin-top: 50px;
+    display: block;
+  }
+
+  .lets-connect {
+    margin-top: 115px;
+  }
+
+  .phone, .email {
+    margin-bottom: 18px;
+  }
+
+  @include social-buttons($size: 28px, $file-prefix: "2x_About_");
+
+  .social-buttons {
+    margin-top: 25px;
+  }
+  .social-button {
+    margin-right: 18px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+
+
+  .hero {
     @include outer-container;
-  }
-  .main {
-    @include span-columns(8);
-  }
-  .sidebar {
-    @include span-columns(4);
+    .self-image {
+      @include span-columns(7);
+    }
   }
 
-  img {
-    width: 100%;
+  .content-wrapper {
+    @include outer-container;
+    .main {
+      @include span-columns(7);
+    }
+    .sidebar {
+      @include span-columns(4);
+      @include shift(1);
+    }
   }
 
 }

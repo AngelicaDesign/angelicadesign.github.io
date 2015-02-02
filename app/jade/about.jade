@@ -2,17 +2,20 @@ include _/_page
 
 +page('about', 'About')
   .hero
-    img.self-image(href='/imgages/2x_Self_Image.png')
-  section
+    img.self-image(src='/images/2x_Self_Image.png')
+  .content-wrapper
     .main
       .heading Designing with integrity
       p I am a passionate designer who believes in the power of good design and good intentions. My intention is to  create compassionate, well-executed work that aims to communicate and be visually stimulating. I received my Bachelor of Science degree in Graphic Design from Sacramento State University and am currently living in Northern California. I specialize in UI/UX design, print, branding, and illustration. I love to learn new things, connect with new people, and enjoy the beauty of life.
       .heading Ready to make things happen?
-      p Let me help make your vision a reality. I will work with you step by step to create work that is authentic and tailored to your needs. By working together we can create something that will make a difference in your business and that you will be proud of. I am currently available for freelance work. Please don’t hesitate to email me, or call me at (916) 549-0849. I can’t wait to hear from you. Until then, thank you for stopping by.
+      p Let me help make your vision a reality. I will work with you step by step to create work that is authentic and tailored to your needs. By working together we can create something that will make a difference in your business and that you will be proud of. I am currently available for freelance work. Please don’t hesitate to <a href="mailto:#{CONFIG.email}">email me</a>, or call me at (916) 549-0849. I can’t wait to hear from you. Until then, thank you for stopping by.
     .sidebar
       .heading Recognition
-      img(src='/images/2x_Award_A.png')
-      img(src='/images/2x_Award_B.png')
-      .heading Let's connect
-      .phone (916) 549-0849
-      .email angelicadesign1@gmail.com
+      img.award(src='/images/2x_Award_A.png')
+      img.award(src='/images/2x_Award_B.png')
+      .heading.lets-connect Let's connect
+      .phone= CONFIG.phone
+      .email= CONFIG.email
+      .social-buttons
+        each url, name in CONFIG.social
+          a.social-button(class=name, href=url)

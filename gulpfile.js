@@ -28,6 +28,7 @@ var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
 var neat = require('node-neat').includePaths;
+var config = require('./app/config.json');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -102,9 +103,10 @@ gulp.task('styles', function () {
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
+  var LOCALS = { CONFIG: config };
 
   return gulp.src('app/jade/*.jade')
-    .pipe($.jade({ pretty: true }))
+    .pipe($.jade({ pretty: true, locals: LOCALS }))
     .pipe(assets)
     // Concatenate And Minify JavaScript
     .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))

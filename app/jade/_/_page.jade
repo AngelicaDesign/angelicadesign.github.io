@@ -6,9 +6,9 @@ mixin page(name, title)
     head
 
       if title
-        title= title + ' - Angelica Design'
+        title= title + ' - ' + CONFIG.title
       else
-        title Angelica Design
+        title CONFIG.title
 
       include _meta
 
@@ -37,20 +37,15 @@ mixin page(name, title)
           .contact-info
             p
               img.phone(src='/images/2x_Phone.png')
-              | (916) 549-0849
+              = CONFIG.phone
             p
               img.email(src='/images/2x_Email.png')
-              | angelicadesign1@gmail.com
+              = CONFIG.email
         .footer-bottom-section
           .legal Website designed by Angelica Design ©2015. All Rights Reserved.
           .social-icons
-            a.social-button(href='http://www.linkedin.com/pub/angelica-gutierrez/34/631/73b'): img(src='/images/2x_Footer_Linkedin.png')
-            a.social-button(href='https://www.behance.net/angelicadesign1'): img(src='/images/2x_Footer_Behance.png')
-            a.social-button(href='https://dribbble.com/AngelicaDesign'): img(src='/images/2x_Footer_Dribbble.png')
-            a.social-button(href='http://instagram.com/angelica_design/'): img(src='/images/2x_Footer_Instagram.png')
-            a.social-button(href='http://www.pinterest.com/AngelicaDesign1/'): img(src='/images/2x_Footer_Pinterest.png')
-            a.social-button(href='http://www.facebook.com/angelicadesign1'): img(src='/images/2x_Footer_Facebook.png')
-            a.social-button(href=''): img(src='/images/2x_Footer_Share.png')
+            each url, name in CONFIG.social
+              a.social-button(class=name, href=url)
 
       // build:js /scripts/main.min.js
       script(src='/scripts/main.js')
