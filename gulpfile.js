@@ -161,7 +161,7 @@ gulp.task('serve', ['styles', 'html'], function () {
 
   gulp.watch(['app/**/*.jade'], ['html', reload]);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.js'], ['html', 'jshint']);
   gulp.watch(['app/images/**/*'], reload);
 });
 

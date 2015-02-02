@@ -1,8 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Quicksand:400,700|Open+Sans);
 
-@import "reset";  // Reset all styles
+@import "reset";   // Reset all styles
 @import "bourbon"; // Use this for its functions and addons
-@import "neat";   // Grid framework
-@import "global";
+@import "neat";    // Grid framework
+
+// Styles used throughout the site
+@import "global"; // global styles, mixins, and settings that are used in imports shown below
+@import "header-nav";
+@import "footer";
+
+// Page-specific styles
 @import "home";
 @import "about";

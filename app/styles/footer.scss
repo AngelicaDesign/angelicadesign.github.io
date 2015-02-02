@@ -1,0 +1,63 @@
+.footer {
+  color: white;
+  background: $brand-color;
+  padding: 0 $page-padding;
+
+  .lets-connect-container, .contact-info {
+    padding: 75px 0;
+  }
+
+  .if-work-well {
+    font-family: $quicksand;
+    font-weight: bold;
+    font-size: 32px;
+    margin-left: -7px;
+    margin-bottom: 20px;
+  }
+
+  .lets-connect {
+    width: 495px;
+  }
+
+  .contact-info {
+    font-style: 26px;
+    font-family: $quicksand;
+    font-weight: bold;
+    p {
+      margin: 7px 0;
+    }
+    .phone, .email {
+      width: 23px;
+      margin-right: 17px;
+      vertical-align: middle;
+    }
+  }
+
+  .footer-bottom-section {
+    padding: 40px 0;
+    border-top: 1px solid white;
+    color: $brand-dark-color;
+  }
+
+  .legal {
+    font-size: 16px;
+  }
+
+  @include social-buttons($size: 28px, $file-prefix: "2x_Footer_");
+  @include resize-wide-share-button(28px);
+
+  .social-button {
+    margin-right: 20px;
+  }
+
+}
+
+.footer-bottom-section, .footer-top-section {
+  @include outer-container;
+  .lets-connect-container, .legal {
+    @include span-columns(7);
+  }
+  .contact-info, .social-icons {
+    @include span-columns(5);
+  }
+}

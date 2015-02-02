@@ -1,0 +1,54 @@
+block vars
+
+doctype html
+html(lang='en')
+  head
+
+    if TITLE
+      title= TITLE + ' - ' + CONFIG.title
+    else
+      title CONFIG.title
+
+    include meta
+
+    //--Page styles
+    link(rel='stylesheet', href='/styles/main.css')
+
+  body(class=NAME+'-page')
+    block header
+      include _nav
+      +nav(NAME)
+
+    .main
+      block content
+
+    a.top-button: img(src='/images/2x_Top_Button.png')
+
+    .footer
+      .footer-top-section
+        .lets-connect-container
+          .if-work-well Think we'd work well together?
+          img.lets-connect(src='/images/2x_Lets_Connect.png')
+        .contact-info
+          p
+            img.phone(src='/images/2x_Phone.png')
+            = CONFIG.phone
+          p
+            img.email(src='/images/2x_Email.png')
+            = CONFIG.email
+      .footer-bottom-section
+        .legal Website designed by Angelica Design ©2015. All Rights Reserved.
+        .social-icons
+          each url, name in CONFIG.social
+            a.social-button(class=name, href=url)
+
+    // build:js /scripts/vendor.min.js
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/sticky/jquery.sticky.js')
+    // endbuild
+
+    // build:js /scripts/main.min.js
+    script(src='/scripts/main.js')
+    script(src='/scripts/main-helper.js')
+    // endbuild
+    //- include analytics

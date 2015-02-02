@@ -1,4 +1,10 @@
-.home-page {
+.home-page .nav {
+  position: fixed;
+  display: none;
+}
+
+.home-page .main {
+
   .projects {
     overflow: auto;
   }
@@ -21,4 +27,5 @@
     margin-top: 34px;
     height: 60px;
   }
+
 }

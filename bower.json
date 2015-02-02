@@ -15,7 +15,9 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "reset-scss": "*"
+  "devDependencies": {
+    "reset-scss": "*",
+    "jquery": "~2.1.3",
+    "sticky": "~1.0.1"
   }
 }

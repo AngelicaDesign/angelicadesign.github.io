@@ -1,5 +1,3 @@
-include _nav
-
 mixin page(name, title)
   doctype html
   html(lang='en')
@@ -10,21 +8,12 @@ mixin page(name, title)
       else
         title CONFIG.title
 
-      include _meta
+      include meta
 
       //--Page styles
       link(rel='stylesheet', href='/styles/main.css')
 
     body
-      .header
-         .menu-button
-         img.logo(src='/images/2x_Main_Logo.png')
-         ul
-           li ui/ux
-           li print
-           li branding
-           li illustration
-      +nav(name)
       div(class=name+'-page')
         block
 
@@ -51,4 +40,4 @@ mixin page(name, title)
       script(src='/scripts/main.js')
       script(src='/scripts/main-helper.js')
       // endbuild
-      //- include _analytics
+      //- include analytics

@@ -49,17 +49,6 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
   background-size: contain;
   background-repeat: no-repeat;
 }
-// @mixin share-button($size) {
-//   $orig-width: 178px;
-//   $orig-height: 56px;
-//   $height: $size;
-//   height: $height;
-//   // calculate width by scaling original width down proportionally
-//   width: $height * ($orig-width / $orig-height);
-// }
-// .footer .social-button.share {
-//   @include share-button(28px);
-// }
 
 
 
@@ -70,13 +59,13 @@ body {
   font-size: 28px;
   font-weight: 200;
   color: $light-color;
-  width: 1366px;
-  background: white;
-  position: relative;
+  // width: 1366px;
+  // background: white;
+  // position: relative;
 }
-html {
-  background: black;
-}
+// html {
+//   background: black;
+// }
 
 a {
   color: $brand-color;
@@ -98,94 +87,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .hide {
   visibility: hidden;
-}
-
-.header {
-  padding: 100px 0;
-  text-align: center;
-  ul {
-    margin-top: 9px;
-    color: $medium-color;
-
-    font-family: $quicksand;
-    font-weight: bold;
-    font-size: 26px;
-  }
-  li {
-    display: inline-block;
-    &:before {
-      font-size: 15px;
-      content: "\2022"; // bullet icon
-      padding: 8px;
-      display: inline-block; // makes translate work
-      transform: translateY(-2%);
-    }
-    &:first-child:before {
-      content: ""; // bullet icon
-      padding: 0;
-    }
-  }
-  li:first-child {
-    margin-left: 0;
-  }
-}
-
-.logo {
-  width: 450px;
-}
-
-
-.menu-button {
-  position: absolute;
-  top: 25px;
-  right: 30px;
-  background: url(/images/2x_menu.png) no-repeat center center;
-  background-size: contain;
-  width: 35px;
-  height: 35px;
-}
-
-.nav {
-  $padding: 42px;
-
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: $padding 0;
-  background: white; // because this element will cover others
-  .small-logo {
-    height: 27px;
-    display: block;
-    margin-left: $padding;
-  }
-  ul {
-    display: block;
-    position: absolute;
-    right: $padding;
-    top: 50%;
-     // We want 50% but it doesn't look centered that way
-    transform: translateY(-56%);
-  }
-  li {
-    list-style: none;
-    display: inline;
-    &:before {
-      content: "\2022"; // bullet icon
-      padding: 8px;
-      display: inline-block; // makes translate work
-      transform: translateY(5%);
-    }
-    &:first-child:before {
-      content: ""; // bullet icon
-    }
-  }
-  a {
-    text-decoration: none;
-    font-family: $quicksand;
-    font-weight: bold;
-    color: $medium-color;
-    // margin-left: 20px;
-  }
 }
 
 
@@ -210,70 +111,4 @@ h1, h2, h3, h4, h5, h6 {
 p {
   line-height: 1.7;
   margin: 32px 0;
-}
-
-
-
-.footer {
-  color: white;
-  background: $brand-color;
-  padding: 0 $page-padding;
-
-  .lets-connect-container, .contact-info {
-    padding: 75px 0;
-  }
-
-  .if-work-well {
-    font-family: $quicksand;
-    font-weight: bold;
-    font-size: 32px;
-    margin-left: -7px;
-    margin-bottom: 20px;
-  }
-
-  .lets-connect {
-    width: 495px;
-  }
-
-  .contact-info {
-    font-style: 26px;
-    font-family: $quicksand;
-    font-weight: bold;
-    p {
-      margin: 15px 0;
-    }
-    .phone, .email {
-      width: 23px;
-      margin-right: 17px;
-      vertical-align: middle;
-    }
-  }
-
-  .footer-bottom-section {
-    padding: 40px 0;
-    border-top: 1px solid white;
-    color: $brand-dark-color;
-  }
-
-  .legal {
-    font-size: 16px;
-  }
-
-  @include social-buttons($size: 28px, $file-prefix: "2x_Footer_");
-  @include resize-wide-share-button(28px);
-
-  .social-button {
-    margin-right: 20px;
-  }
-
-}
-
-.footer-bottom-section, .footer-top-section {
-  @include outer-container;
-  .lets-connect-container, .legal {
-    @include span-columns(7);
-  }
-  .contact-info, .social-icons {
-    @include span-columns(5);
-  }
 }

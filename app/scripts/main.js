@@ -1,7 +1,17 @@
+/* global $: false */
+
 (function () {
   'use strict';
-  var $ = document.querySelector.bind(document);
-  window.addEventListener('scroll', function (e) {
-    $('.nav').classList.toggle('hide', window.scrollY < $('.header').offsetHeight - $('.nav').offsetHeight);
+
+  $(document).ready(function(){
+    if ($('.home-page').length) {
+      console.log($('.nav'));
+      window.addEventListener('scroll', function (e) {
+        $('.nav').toggle(window.scrollY > $('.header').outerHeight() - $('.nav').outerHeight());
+      });
+    } else {
+      $('.nav').sticky();
+    }
   });
+
 })();

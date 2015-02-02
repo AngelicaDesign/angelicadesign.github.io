@@ -1,6 +1,20 @@
-include _/_page
+extends _/layout
 
-+page('home', 'Home')
+block vars
+  - TITLE = 'Home'
+  - NAME = 'home'
+
+block prepend header
+  .header
+    .menu-button
+    img.logo(src='/images/2x_Main_Logo.png')
+    ul
+      li ui/ux
+      li print
+      li branding
+      li illustration
+
+block content
   .projects
     img.project(src='/images/2x_Main_Project_Image_A.png')
     img.project(src='/images/2x_Main_Project_Image_B.png')

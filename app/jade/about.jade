@@ -1,6 +1,10 @@
-include _/_page
+extends _/layout
 
-+page('about', 'About')
+block vars
+  - TITLE = 'About'
+  - NAME = 'about'
+
+block content
   .hero
     img.self-image(src='/images/2x_Self_Image.png')
   .content-wrapper
