@@ -19,10 +19,10 @@
   }
 
   .award {
-    width: 80%;
+    width: 296px;
 
     // Move the awards to the left a bit so it looks better and appears centered with title
-    margin-left: -17px;
+    margin-left: -8px;
     margin-top: 50px;
     display: block;
   }
@@ -48,7 +48,7 @@
   }
 
   .philosophy {
-    @include outer-container;
+    @include outer-container(100%);
     background: $brand-color;
     img {
       padding: 75px;
