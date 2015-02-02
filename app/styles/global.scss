@@ -22,6 +22,18 @@ $open-sans: 'Open Sans', Helvetica, sans-serif;
 
 $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
 
+@mixin social-button($name, $size, $file-prefix) {
+  $capitalized-name: capitalize($name);
+  .#{$name}.social-button {
+    height: $size;
+    width: $size;
+    background-image: url("/images/#{$file-prefix}#{$capitalized-name}.png");
+    &:hover {
+      background-image: url("/images/#{$file-prefix}#{$capitalized-name}_Active.png");
+    }
+  }
+}
+
 @mixin resize-wide-share-button($size) {
   .share.social-button {
     $orig-width: 178px;
@@ -34,15 +46,7 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
 }
 @mixin social-buttons($size, $file-prefix) {
   @each $item in $social {
-    $name: capitalize($item);
-    .#{$item}.social-button {
-      height: $size;
-      width: $size;
-      background-image: url("/images/#{$file-prefix}#{$name}.png");
-      &:hover {
-        background-image: url("/images/#{$file-prefix}#{$name}_Active.png");
-      }
-    }
+    @include social-button($item, $size, $file-prefix);
   }
 }
 

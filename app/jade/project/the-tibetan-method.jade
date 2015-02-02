@@ -4,7 +4,12 @@ block vars
   - TITLE = 'The Tibetan Method Posters'
 
 block content
-  .hero
-    h1.title= TITLE
-    .project-type Print / Illustration
-
+  .project-page
+    .hero
+      h1.title= TITLE
+      .project-type Print / Illustration
+    .project-nav
+      a.social-button.share(href=CONFIG.social.share)
+      .previous-and-next
+        a.project-previous(href='#')
+        a.project-next(href='#')

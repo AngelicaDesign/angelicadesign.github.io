@@ -1,0 +1,58 @@
+.project-page {
+  .hero {
+    padding: 300px;
+    height: 740px;
+    color: white;
+    background: black;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.25;
+    @include outer-container();
+  }
+  .title {
+    font-size: 58px;
+  }
+  .project-type {
+    margin-top: 10px;
+    font-size: 32px;
+    font-family: $quicksand;
+  }
+
+  .project-nav {
+    padding: 48px;
+    position: relative;
+  }
+
+  .previous-and-next {
+    text-align: center;
+  }
+  .project-next, .project-previous {
+    width: 56px;
+    height: 56px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 0 15px;
+  }
+  .project-previous {
+    background-image: url(/images/2x_Project_Previous.png);
+    &:hover {
+      background-image: url(/images/2x_Project_Previous_Active.png);
+    }
+  }
+  .project-next {
+    background-image: url(/images/2x_Project_Next.png);
+    &:hover {
+      background-image: url(/images/2x_Project_Next_Active.png);
+    }
+  }
+
+  @include social-button($name: "share", $size: 28px, $file-prefix: "2x_Project_");
+  @include resize-wide-share-button(28px);
+  .social-button.share {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
