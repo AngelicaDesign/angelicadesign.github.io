@@ -1,16 +1,18 @@
 - var HOME_PAGE = 'home'
+- var CURRENT_PAGE
 
 mixin link(name)
-  - var isActive = (CURRENT_PAGE==name || (CURRENT_PAGE==HOME_PAGE && name=='')) ? 'active':''
-  a(href='/'+name, class=isActive + ' ' + name + '-link')
+  - var isActive = (name == CURRENT_PAGE) ? 'active' : ''
+  - var url = (name == HOME_PAGE) ? '/' : '/'+name
+  a(href=url, class=isActive+' '+name+'-link')
     block
 
 mixin nav(name)
-  - var CURRENT_PAGE = name
+  - CURRENT_PAGE = name
   .nav
     img.small-logo(src='/images/2x_Small_Logo.png')
     ul
-      li: +link('') portfolio
+      li: +link('home') portfolio
       li: +link('about') about
       li: +link('contact') contact
       li: +link('blog') blog
