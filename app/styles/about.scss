@@ -1,16 +1,12 @@
 .about-page .main {
 
-  p {
-    line-height:
-  }
-
   .heading {
     margin-top: $page-padding;
   }
 
   .hero {
     padding: 0 $page-padding;
-    background: #f2f2f2;
+    background: $pale-color;
   }
 
   .self-image {
@@ -51,6 +47,26 @@
     }
   }
 
+  .philosophy {
+    @include outer-container;
+    background: $brand-color;
+    img {
+      padding: 75px;
+    }
+  }
+
+  .quote {
+    color: $dark-color;
+    background: $pale-color;
+    padding: 200px;
+    text-align: center;
+  }
+
+  .call-to-action {
+    padding: 250px;
+    text-align: center;
+  }
+
 
 
   .hero {
@@ -62,12 +78,19 @@
 
   .content-wrapper {
     @include outer-container;
-    .main {
+    .main-content {
       @include span-columns(7);
     }
     .sidebar {
       @include span-columns(4);
       @include shift(1);
+    }
+  }
+
+  .philosophy {
+    @include outer-container;
+    img {
+      @include span-columns(4);
     }
   }
 
