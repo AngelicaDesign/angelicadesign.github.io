@@ -10,7 +10,7 @@ mixin link(name)
 mixin nav(name)
   - CURRENT_PAGE = name
   .nav
-    img.small-logo(src='/images/2x_Small_Logo.png')
+    a.small-logo(href='/')
     ul
       li: +link('home') portfolio
       li: +link('about') about

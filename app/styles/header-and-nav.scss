@@ -63,11 +63,20 @@
   width: 100%;
   padding: $padding 0;
   background: white; // because this element will cover others
-  .small-logo {
+
+  a.small-logo {
+    background-image: url(/images/2x_Small_Logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(344);
     height: rem(27);
     display: block;
     margin-left: $padding;
+    &:hover {
+      background-image: url(/images/2x_Small_Logo_Active.png);
+    }
   }
+
   ul {
     display: block;
     position: absolute;
