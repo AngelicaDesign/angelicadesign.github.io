@@ -50,6 +50,16 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
   }
 }
 
+@mixin cover {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+
 .social-button {
   display: inline-block;
   background-size: contain;
@@ -115,6 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .heading {
+  line-height: 1.25;
   font-weight: bold;
   font-size: 38px;
   text-transform: uppercase;

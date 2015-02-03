@@ -8,12 +8,62 @@
   .projects {
     @include outer-container(100%);
   }
-  .project img {
-    background: linear-gradient(to bottom right, $medium-color, white);
-    height: 25vw;
-    width: 25vw;
-    float: left;
+
+  a.project {
+    color: $dark-color;
   }
+
+  .project {
+    position: relative;
+    display: block;
+    float: left;
+
+    .active {
+      @include cover;
+      line-height: 1.25;
+      padding: 10%;
+      text-align: center;
+      background: rgba(white, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      opacity: 0;
+      // transition: opacity 0.1s ease;
+    }
+    &:hover .active {
+      opacity: 1;
+    }
+
+    .title {
+      font-size: 18px;
+      font-family: $quicksand;
+      font-weight: bold;
+    }
+
+    .type {
+      margin-top: 20px;
+      font-size: 14px;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        background: $dark-color;
+        left: 40%;
+        right: 40%;
+        height: 1px;
+      }
+    }
+
+    img {
+      background: linear-gradient(to bottom right, $medium-color, white);
+      height: 25vw;
+      width: 25vw;
+      display: block;
+    }
+  }
+
 
   .section {
     text-align: center;
