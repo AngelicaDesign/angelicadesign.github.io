@@ -1,17 +1,19 @@
-* { box-sizing: border-box; }
+// Bourbon settings
+$em-base: 21.3px;
 
-
+// Custom settings
 $brand-color: #32c9c2;
 $brand-dark-color: #2e7c7d;
 $dark-color: #999;
 $medium-color: #ccc;
 $light-color: #d0d2d3;
 $pale-color: #f2f2f2;
-$page-padding: 95px;
+$page-padding: rem(95);
 
 $quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', Helvetica, sans-serif;
 
+* { box-sizing: border-box; }
 
 
 
@@ -36,8 +38,8 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
 
 @mixin resize-wide-share-button($size) {
   .share.social-button {
-    $orig-width: 178px;
-    $orig-height: 56px;
+    $orig-width: rem(178);
+    $orig-height: rem(56);
     $height: $size;
     height: $height;
     // calculate width by scaling original width down proportionally
@@ -72,10 +74,10 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
 
 body {
   font-family: $open-sans;
-  font-size: 28px;
+  font-size: rem(28);
   font-weight: 200;
   color: $light-color;
-  // width: 1366px;
+  // width: rem(1366);
   // background: white;
   // position: relative;
 }
@@ -111,13 +113,13 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url(/images/2x_Top_Button.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 53px;
-  height: 53px;
+  width: rem(53);
+  height: rem(53);
   position: fixed;
-  right: 40px;
-  bottom: 40px;
+  right: rem(40);
+  bottom: rem(40);
   &:hover {
-    height: 90px; // A few pixels taller actual image height
+    height: rem(90); // A few pixels taller actual image height
     background-image: url(/images/2x_Top_Button_Active.png);
   }
 }
@@ -127,14 +129,14 @@ h1, h2, h3, h4, h5, h6 {
 .heading {
   line-height: 1.25;
   font-weight: bold;
-  font-size: 38px;
+  font-size: rem(38);
   text-transform: uppercase;
   font-family: $quicksand;
   color: $brand-color;
-  margin-bottom: 32px;
+  margin-bottom: rem(32);
 }
 
 p {
   line-height: 1.7;
-  margin: 32px 0;
+  margin: rem(32) 0;
 }

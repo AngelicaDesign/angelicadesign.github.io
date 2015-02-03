@@ -15,33 +15,33 @@
 
   .content-wrapper {
     padding: 0 $page-padding;
-    padding-bottom: 145px;
+    padding-bottom: rem(145);
   }
 
   .award {
-    width: 296px;
+    width: rem(296);
 
     // Move the awards to the left a bit so it looks better and appears centered with title
-    margin-left: -8px;
-    margin-top: 50px;
+    margin-left: rem(-8);
+    margin-top: rem(50);
     display: block;
   }
 
   .lets-connect {
-    margin-top: 115px;
+    margin-top: rem(115);
   }
 
   .phone, .email {
-    margin-bottom: 18px;
+    margin-bottom: rem(18);
   }
 
-  @include social-buttons($size: 28px, $file-prefix: "2x_About_");
+  @include social-buttons($size: rem(28), $file-prefix: "2x_About_");
 
   .social-buttons {
-    margin-top: 25px;
+    margin-top: rem(25);
   }
   .social-button {
-    margin-right: 18px;
+    margin-right: rem(18);
     &:last-child {
       margin-right: 0;
     }
@@ -51,19 +51,19 @@
     @include outer-container(100%);
     background: $brand-color;
     img {
-      padding: 115px;
+      padding: rem(115);
     }
   }
 
   .quote {
     color: $dark-color;
     background: $pale-color;
-    padding: 200px;
+    padding: rem(200);
     text-align: center;
   }
 
   .call-to-action {
-    padding: 250px;
+    padding: rem(250);
     text-align: center;
   }
 

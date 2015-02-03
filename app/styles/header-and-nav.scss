@@ -3,22 +3,22 @@
 // ------
 
 .header {
-  padding: 100px 0;
+  padding: rem(100) 0;
   text-align: center;
   ul {
-    margin-top: 9px;
+    margin-top: rem(9);
     color: $medium-color;
 
     font-family: $quicksand;
     font-weight: bold;
-    font-size: 26px;
+    font-size: rem(26);
   }
   li {
     display: inline-block;
     &:before {
-      font-size: 15px;
+      font-size: rem(15);
       content: "\2022"; // bullet icon
-      padding: 8px;
+      padding: rem(8);
       display: inline-block; // makes translate work
       transform: translateY(-2%);
     }
@@ -33,18 +33,18 @@
 }
 
 .logo {
-  width: 450px;
+  width: rem(450);
 }
 
 
 .menu-button {
   position: absolute;
-  top: 25px;
-  right: 30px;
+  top: rem(25);
+  right: rem(30);
   background: url(/images/2x_menu.png) no-repeat center center;
   background-size: contain;
-  width: 35px;
-  height: 35px;
+  width: rem(35);
+  height: rem(35);
 }
 
 
@@ -55,15 +55,16 @@
 
 .nav {
 
-  $padding: 42px;
+  $padding: rem(42);
 
+  font-size: rem(24);
   position: relative;
   top: 0;
   width: 100%;
   padding: $padding 0;
   background: white; // because this element will cover others
   .small-logo {
-    height: 27px;
+    height: rem(27);
     display: block;
     margin-left: $padding;
   }
@@ -80,7 +81,7 @@
     display: inline;
     &:before {
       content: "\2022"; // bullet icon
-      padding: 8px;
+      padding: rem(8);
       display: inline-block; // makes translate work
       transform: translateY(5%);
     }
@@ -93,7 +94,7 @@
     font-family: $quicksand;
     font-weight: bold;
     color: $medium-color;
-    // margin-left: 20px;
+    // margin-left: rem(20);
   }
   a.active {
     color: $brand-color;

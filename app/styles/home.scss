@@ -36,19 +36,19 @@
     }
 
     .title {
-      font-size: 18px;
+      font-size: rem(18);
       font-family: $quicksand;
       font-weight: bold;
     }
 
     .type {
-      margin-top: 20px;
-      font-size: 14px;
+      margin-top: rem(20);
+      font-size: rem(14);
       position: relative;
       &:before {
-        content: '';
+        content: "";
         position: absolute;
-        top: -10px;
+        top: rem(-10);
         background: $dark-color;
         left: 40%;
         right: 40%;
@@ -67,14 +67,14 @@
 
   .section {
     text-align: center;
-    margin: 200px auto;
+    margin: rem(200) auto;
 
     width: 60%;
   }
 
   .learn-more-button img {
-    margin-top: 34px;
-    height: 60px;
+    margin-top: rem(34);
+    height: rem(60);
   }
 
 }

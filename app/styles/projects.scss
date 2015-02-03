@@ -1,7 +1,7 @@
 .project-page {
   .hero {
-    padding: 300px;
-    height: 740px;
+    padding: rem(300);
+    height: rem(740);
     color: white;
     background: black;
     text-align: center;
@@ -10,16 +10,16 @@
     @include outer-container();
   }
   .title {
-    font-size: 58px;
+    font-size: rem(58);
   }
   .project-type {
-    margin-top: 10px;
-    font-size: 32px;
+    margin-top: rem(10);
+    font-size: rem(32);
     font-family: $quicksand;
   }
 
   .project-nav {
-    padding: 48px;
+    padding: rem(48);
     position: relative;
   }
 
@@ -27,12 +27,12 @@
     text-align: center;
   }
   .project-next, .project-previous {
-    width: 56px;
-    height: 56px;
+    width: rem(56);
+    height: rem(56);
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 rem(15);
   }
   .project-previous {
     background-image: url(/images/2x_Project_Previous.png);
@@ -47,8 +47,8 @@
     }
   }
 
-  @include social-button($name: "share", $size: 28px, $file-prefix: "2x_Project_");
-  @include resize-wide-share-button(28px);
+  @include social-button($name: "share", $size: rem(28), $file-prefix: "2x_Project_");
+  @include resize-wide-share-button(rem(28));
   .social-button.share {
     position: absolute;
     top: 50%;

@@ -5,67 +5,66 @@
   .if-work-well {
     font-family: $quicksand;
     font-weight: bold;
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: rem(32);
+    margin-bottom: rem(20);
   }
 
   .lets-connect {
-    width: 495px;
+    width: rem(495);
   }
 
   .contact-info {
-    font-size: 26px;
+    font-size: rem(26);
     font-family: $quicksand;
     font-weight: bold;
     p {
-      margin: 7px 0;
+      margin: rem(7) 0;
     }
     .phone, .email {
-      width: 23px;
-      margin-right: 17px;
+      width: rem(23);
+      margin-right: rem(17);
       vertical-align: middle;
     }
   }
 
   .copyright {
     color: $brand-dark-color;
-    font-size: 16px;
+    font-size: rem(16);
   }
 }
 
 .contact-page {
   background: rgba($brand-color, 0.9);
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
   &.hide {
-    visibility: visible;
     transform: translateY(100%);
   }
 
   .if-work-well {
-    margin-left: -3px; // Align the "R" to the "L"
+    margin-left: rem(-3); // Align the "R" to the "L"
   }
 
   .lets-connect {
-    margin-bottom: 130px;
+    margin-bottom: rem(130);
   }
 
   .contact-info {
-    margin-bottom: 40px;
+    margin-bottom: rem(40);
   }
 
-  @include social-buttons($size: 28px, $file-prefix: "2x_Contact_");
-  @include resize-wide-share-button(28px);
+  @include social-buttons($size: rem(28), $file-prefix: "2x_Contact_");
+  @include resize-wide-share-button(rem(28));
   .social-buttons {
     border-top: 1px solid white;
-    padding-top: 38px;
+    padding-top: rem(38);
   }
   .social-button {
-    margin-right: 23px;
+    margin-right: rem(23);
   }
 
   .copyright {
     position: absolute;
-    bottom: 40px;
+    bottom: rem(40);
   }
 
   height: 100%;
@@ -83,23 +82,23 @@
   padding: 0 $page-padding;
 
   .lets-connect-container, .contact-info {
-    padding: 75px 0;
+    padding: rem(75) 0;
   }
 
   .if-work-well {
-    margin-left: -7px; // Align the "T" to the "L"
+    margin-left: rem(-7); // Align the "T" to the "L"
   }
 
   .footer-bottom-section {
-    padding: 40px 0;
+    padding: rem(40) 0;
     border-top: 1px solid white;
   }
 
-  $social-button-size: 28px;
+  $social-button-size: rem(28);
   @include social-buttons($size: $social-button-size, $file-prefix: "2x_Footer_");
   @include resize-wide-share-button($social-button-size);
   .social-button {
-    margin-right: 20px;
+    margin-right: rem(20);
   }
 
   .copyright {
@@ -114,7 +113,7 @@
     .contact-info, .social-buttons {
       @include span-columns(5);
     }
-    $mobile: new-breakpoint(max-width 1200px 4);
+    $mobile: new-breakpoint(max-width rem(1200) 4);
     @include media($mobile) {
       .lets-connect-container, .copyright {
         @include span-columns(4);
