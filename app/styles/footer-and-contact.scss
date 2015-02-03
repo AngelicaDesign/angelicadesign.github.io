@@ -114,6 +114,17 @@
     .contact-info, .social-buttons {
       @include span-columns(5);
     }
+    $mobile: new-breakpoint(max-width 1200px 4);
+    @include media($mobile) {
+      .lets-connect-container, .copyright {
+        @include span-columns(4);
+      }
+      .contact-info, .social-buttons {
+        @include span-columns(4);
+      }
+    }
   }
+
+
 }
 
