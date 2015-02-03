@@ -16,7 +16,16 @@ $open-sans: 'Open Sans', Helvetica, sans-serif;
 * { box-sizing: border-box; }
 
 
-
+@mixin hover-image($prefix, $width, $height) {
+  width: $width;
+  height: $height;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/images/#{$prefix}.png);
+  &:hover {
+    background-image: url(/images/#{$prefix}_Active.png);
+  }
+}
 
 @function capitalize($string) {
   @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
@@ -27,12 +36,10 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
 @mixin social-button($name, $size, $file-prefix) {
   $capitalized-name: capitalize($name);
   .#{$name}.social-button {
-    height: $size;
-    width: $size;
-    background-image: url("/images/#{$file-prefix}#{$capitalized-name}.png");
-    &:hover {
-      background-image: url("/images/#{$file-prefix}#{$capitalized-name}_Active.png");
-    }
+    @include hover-image(
+      $prefix: "#{$file-prefix}#{$capitalized-name}",
+      $width: $size,
+      $height: $size);
   }
 }
 

@@ -29,7 +29,7 @@
       justify-content: center;
 
       opacity: 0;
-      // transition: opacity 0.1s ease;
+      transition: opacity 0.1s ease;
     }
     &:hover .active {
       opacity: 1;
@@ -72,9 +72,10 @@
     width: 60%;
   }
 
-  .learn-more-button img {
+  a.learn-more-button {
     margin-top: rem(34);
-    height: rem(60);
+    display: inline-block;
+    @include hover-image("2x_Learn_More_Button", rem(292), rem(60));
   }
 
 }

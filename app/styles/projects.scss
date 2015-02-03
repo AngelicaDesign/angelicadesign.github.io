@@ -27,24 +27,14 @@
     text-align: center;
   }
   .project-next, .project-previous {
-    width: rem(56);
-    height: rem(56);
-    background-size: contain;
-    background-repeat: no-repeat;
     display: inline-block;
     margin: 0 rem(15);
   }
   .project-previous {
-    background-image: url(/images/2x_Project_Previous.png);
-    &:hover {
-      background-image: url(/images/2x_Project_Previous_Active.png);
-    }
+    @include hover-image("2x_Project_Previous", rem(56), rem(56));
   }
   .project-next {
-    background-image: url(/images/2x_Project_Next.png);
-    &:hover {
-      background-image: url(/images/2x_Project_Next_Active.png);
-    }
+    @include hover-image("2x_Project_Next", rem(56), rem(56));
   }
 
   @include social-button($name: "share", $size: rem(28), $file-prefix: "2x_Project_");

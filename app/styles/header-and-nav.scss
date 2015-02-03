@@ -41,7 +41,7 @@
   position: absolute;
   top: rem(25);
   right: rem(30);
-  background: url(/images/2x_menu.png) no-repeat center center;
+  background: url(/images/2x_menu.png) no-repeat;
   background-size: contain;
   width: rem(35);
   height: rem(35);
@@ -65,16 +65,9 @@
   background: white; // because this element will cover others
 
   a.small-logo {
-    background-image: url(/images/2x_Small_Logo.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: rem(344);
-    height: rem(27);
+    @include hover-image("2x_Small_Logo", rem(344), rem(27));
     display: block;
     margin-left: $padding;
-    &:hover {
-      background-image: url(/images/2x_Small_Logo_Active.png);
-    }
   }
 
   ul {
@@ -104,8 +97,11 @@
     font-weight: bold;
     color: $medium-color;
     // margin-left: rem(20);
+    &:hover {
+      color: $brand-color;
+    }
   }
   a.active {
-    color: $brand-color;
+    color: $dark-color;
   }
 }
