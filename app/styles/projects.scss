@@ -1,13 +1,12 @@
 .project-page {
   .hero {
-    padding: rem(300);
-    height: rem(740);
+    padding: 20%;
     color: white;
     background: black;
     text-align: center;
     font-weight: bold;
     line-height: 1.25;
-    @include outer-container();
+    @include outer-container(100%);
   }
   .title {
     font-size: rem(58);

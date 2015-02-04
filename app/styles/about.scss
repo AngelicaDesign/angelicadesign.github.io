@@ -1,11 +1,10 @@
 .about-page .main {
 
   .heading {
-    margin-top: $page-padding;
+    margin-top: rem(95);
   }
 
   .hero {
-    padding: 0 $page-padding;
     background: $pale-color;
   }
 
@@ -14,7 +13,6 @@
   }
 
   .content-wrapper {
-    padding: 0 $page-padding;
     padding-bottom: rem(145);
   }
 
@@ -48,10 +46,9 @@
   }
 
   .philosophy {
-    @include outer-container(100%);
     background: $brand-color;
     img {
-      padding: rem(115);
+      padding: 7%;
     }
   }
 
@@ -70,14 +67,16 @@
 
 
   .hero {
-    @include outer-container;
+    padding: 0 $page-padding;
+    @include outer-container(100%);
     .self-image {
       @include span-columns(7);
     }
   }
 
   .content-wrapper {
-    @include outer-container;
+    padding: 0 $page-padding;
+    @include outer-container(100%);
     .main-content {
       @include span-columns(7);
     }
@@ -88,7 +87,7 @@
   }
 
   .philosophy {
-    @include outer-container;
+    @include outer-container(100%);
     img {
       @include span-columns(4);
     }
