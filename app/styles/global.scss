@@ -9,6 +9,8 @@ $medium-color: #ccc;
 $light-color: #d0d2d3;
 $pale-color: #f2f2f2;
 $page-padding: 10%;
+$small-line-height: 1.25; // use for headings and ui text
+$content-line-height: 1.7; // use for paragraphs and content
 
 $quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', Helvetica, sans-serif;
@@ -142,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .heading {
-  line-height: 1.25;
+  line-height: $small-line-height;
   font-weight: bold;
   font-size: rem(38);
   text-transform: uppercase;
@@ -152,6 +154,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  line-height: 1.7;
+  line-height: $content-line-height;
   margin: rem(32) 0;
 }

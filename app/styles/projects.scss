@@ -5,7 +5,7 @@
     background: black;
     text-align: center;
     font-weight: bold;
-    line-height: 1.25;
+    line-height: $small-line-height;
     @include outer-container(100%);
   }
   .title {

@@ -20,7 +20,7 @@
 
     .active {
       @include cover;
-      line-height: 1.25;
+      line-height: $small-line-height;
       padding: 10%;
       text-align: center;
       background: rgba(white, 0.9);
