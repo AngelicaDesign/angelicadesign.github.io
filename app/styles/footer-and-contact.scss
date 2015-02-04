@@ -28,6 +28,7 @@
     }
     a.email {
       color: white;
+      @include hover-effect;
     }
   }
 
