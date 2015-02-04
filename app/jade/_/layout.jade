@@ -32,11 +32,11 @@ html(lang='en')
           .if-work-well Think we'd work well together?
           img.lets-connect(src='/images/2x_Lets_Connect.png')
         .contact-info
-          p
-            img.phone(src='/images/2x_Phone.png')
+          .phone
+            img.phone-icon(src='/images/2x_Phone.png')
             = CONFIG.phone
-          p
-            img.email(src='/images/2x_Email.png')
+          a.email(href='mailto:'+CONFIG.email)
+            img.email-icon(src='/images/2x_Email.png')
             = CONFIG.email
       .footer-bottom-section
         .copyright= CONFIG.copyright

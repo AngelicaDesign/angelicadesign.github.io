@@ -17,13 +17,17 @@
     font-size: rem(26);
     font-family: $quicksand;
     font-weight: bold;
-    p {
+    .phone, .email {
+      line-height: 1.7;
       margin: rem(7) 0;
     }
-    .phone, .email {
+    .phone-icon, .email-icon {
       width: rem(23);
       margin-right: rem(17);
       vertical-align: middle;
+    }
+    a.email {
+      color: white;
     }
   }
 
