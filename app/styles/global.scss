@@ -125,9 +125,9 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   right: rem(40);
   bottom: rem(40);
+  opacity: 0.5;
   &:hover {
-    height: rem(90); // A few pixels taller actual image height
-    background-image: url(/images/2x_Top_Button_Active.png);
+    opacity: 1;
   }
 }
 
