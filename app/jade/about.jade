@@ -17,12 +17,13 @@ block content
       .heading Recognition
       img.award(src='/images/2x_Award_A.png')
       img.award(src='/images/2x_Award_B.png')
-      .heading.lets-connect Let's connect
-      .phone= CONFIG.phone
-      .email= CONFIG.email
-      .social-buttons
-        each url, name in CONFIG.social
-          a.social-button(class=name, href=url)
+      //--Removing because there's already lots of ways to contact
+      //- .heading.lets-connect Let's connect
+      //- .phone= CONFIG.phone
+      //- .email= CONFIG.email
+      //- .social-buttons
+      //-   each url, name in CONFIG.social
+      //-     a.social-button(class=name, href=url)
   .philosophy
     img(src='/images/2x_About_Logo_Growth.png')
     img(src='/images/2x_About_Logo_Beauty.png')

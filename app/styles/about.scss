@@ -29,21 +29,22 @@
     margin-top: rem(115);
   }
 
-  .phone, .email {
-    margin-bottom: rem(18);
-  }
+  //--Removing because there's already lots of ways to contact
+  // .phone, .email {
+  //   margin-bottom: rem(18);
+  // }
 
-  @include social-buttons($size: rem(28), $file-prefix: "2x_About_");
+  // @include social-buttons($size: rem(28), $file-prefix: "2x_About_");
 
-  .social-buttons {
-    margin-top: rem(25);
-  }
-  .social-button {
-    margin-right: rem(18);
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+  // .social-buttons {
+  //   margin-top: rem(25);
+  // }
+  // .social-button {
+  //   margin-right: rem(18);
+  //   &:last-child {
+  //     margin-right: 0;
+  //   }
+  // }
 
   .philosophy {
     background: $brand-color;
