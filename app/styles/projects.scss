@@ -3,6 +3,8 @@
     padding: 20%;
     color: white;
     background: black;
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
     font-weight: bold;
     line-height: $small-line-height;
@@ -15,6 +17,19 @@
     margin-top: rem(10);
     font-size: rem(32);
     font-family: $quicksand;
+  }
+
+  .project-content {
+    @include outer-container(100%);
+
+    .copy {
+      padding: rem(175) $page-padding;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
   }
 
   .project-nav {

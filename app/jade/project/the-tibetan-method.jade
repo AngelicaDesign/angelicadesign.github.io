@@ -2,12 +2,24 @@ extends ../_/layout
 
 block vars
   - TITLE = 'The Tibetan Method Posters'
+  - PROJ = '/images/projects/the-tibetan-method/the-tibetan-method-'
 
 block content
   .project-page
-    .hero
+    .hero(style={'background-image': 'url(#{PROJ}a.jpg)'})
       h1.title= TITLE
       .project-type Print / Illustration
+    .project-content
+      img(src=PROJ+'b.jpg')
+      .copy
+        .heading Design Challenge
+        p The goal was to create two posters that work as a single unit to promote a concert hosted by Sacramento State Unique. The Tibetan Method genre falls under a folk funk alternative indie. Their sound is soothing and very harmonic. They draw influences from Tibetan culture and have iconic instruments that they always use.
+        .heading Design Solution
+        p The intention was to represent their sound style in a visual way as to inform the audience of the band’s characteristics. I played around with connecting the concept of sound waves to that of Zen Sand Garden. The waves convey a soothing tone and reference the Zen-like culture of Tibet. I created illustrations of the instrument that they use and kept the composition simple and balanced. The colors were chosen for their warmth energy and the texture creates a vintage-rustic feel. The star burst pattern adds another layer of dimension and creates movement outwards from the instrument, like sound would do.
+      img(src=PROJ+'c.jpg')
+      img(src=PROJ+'d.jpg', style={padding: '20%'})
+      img(src=PROJ+'e.jpg')
+      img(src=PROJ+'f.jpg', style={padding: '10%'})
     .project-nav
       a.social-button.share(href=CONFIG.social.share)
       .previous-and-next
