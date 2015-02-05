@@ -5,12 +5,16 @@
 
   $(document).ready(function () {
 
+    // Make to-top button appear when user scrolls past a certain point
+    window.addEventListener('scroll', function () {
+      $('.to-top-button').toggleClass('hide', window.scrollY < window.innerHeight/2);
+    });
+
     // Enable sticky nav on all except home page because on that
     // page we have it disappear until user scroll down.
     if ($('.home-page').length) {
       window.addEventListener('scroll', function () {
         $('.nav').toggle(window.scrollY > $('.header').outerHeight() - $('.nav').outerHeight());
-        $('.to-top-button').toggle(window.scrollY > window.innerHeight);
       });
     } else {
       $('.nav').sticky();

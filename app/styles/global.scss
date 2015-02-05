@@ -130,15 +130,18 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .to-top-button {
-  background-image: url(/images/icons/2x_Top_Button.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: rem(53);
-  height: rem(53);
+  @include contained-image("2x_Top_Button", rem(53), rem(53));
+  @include hover-effect;
+
   position: fixed;
   right: rem(40);
   bottom: rem(40);
-  @include hover-effect;
+
+  opacity: 1;
+  transition: opacity .5s ease;
+  &.hide {
+    opacity: 0;
+  }
 }
 
 
