@@ -22,13 +22,13 @@ $open-sans: 'Open Sans', Helvetica, sans-serif;
   height: $height;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(/images/#{$prefix}.png);
+  background-image: url(/images/icons/#{$prefix}.png);
 }
 
 @mixin hover-image($prefix, $width, $height) {
   @include contained-image($prefix, $width, $height);
   &:hover {
-    background-image: url(/images/#{$prefix}_Active.png);
+    background-image: url(/images/icons/#{$prefix}_Active.png);
   }
 }
 
@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .to-top-button {
-  background-image: url(/images/2x_Top_Button.png);
+  background-image: url(/images/icons/2x_Top_Button.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: rem(53);

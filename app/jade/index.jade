@@ -6,75 +6,57 @@ block vars
 block prepend header
   .header
     .menu-button
-    img.logo(src='/images/2x_Main_Logo.png')
+    img.logo(src='/images/icons/2x_Main_Logo.png')
     ul
       li ui/ux
       li print
       li branding
       li illustration
 
+mixin project(name)
+  a.project(href='/project/'+name)
+    img(src='/images/project-thumbnails/'+name+'.jpg')
+    .active
+      block
+
 block content
   .projects
-    a.project(href='/project/brave-and-bold')
-      img(src='/images/2x_Brave_and_Bold.png')
-      .active
-        .title Brave &amp; Bold
-        .type Product Line ∙ Branding ∙ Logo ∙ UX/UI
-    a.project(href='/project/buyepongo')
-      img(src='/images/2x_Buyepongo.png')
-      .active
-        .title Buyepongo Posters
-        .type Print ∙ Illustration
-    a.project(href='/project/native-museum-icons')
-      img(src='/images/2x_Native_Museum_Icons.png')
-      .active
-        .title Native Museum
-        .type Logos ∙ Branding ∙ UX/UI
-    a.project(href='/project/ca-lighting-technology-center')
-      img(src='/images/2x_CA_Lighting_Technology_Center.png')
-      .active
-        .title CA Lighting Technology Center
-        .type Logo ∙ Infographic ∙ Presentations ∙ Print
-    a.project(href='/project/the-tibetan-method')
-      img(src='/images/2x_The_Tibetan_Method.png')
-      .active
-        .title The Tibetan Method
-        .type Print ∙ Illustration
-    a.project(href='/project/intertwine-magazine')
-      img(src='/images/2x_Intertwine_Magazine.png')
-      .active
-        .title Intertwine Magazine
-        .type Print ∙ Infographic ∙ UX/UI
-    a.project(href='/project/alice-in-wonderland')
-      img(src='/images/2x_Alice_in_Wonderland.png')
-      .active
-        .title Alice In Wonderland
-        .type Print ∙ Handlettering
-    a.project(href='/project/get-involved-campaign')
-      img(src='/images/2x_Get_Involved_Campaign.png')
-      .active
-        .title Get Involved Campaign
-        .type Print ∙ App ∙ Video
-    a.project(href='/project/shoki-ramon-house')
-      img(src='/images/2x_Shoki_Ramon_House.png')
-      .active
-        .title Shoki Ramon House
-        .type Logo ∙ Branding ∙ Print ∙ App
-    a.project(href='/project/just-life-for-pre-teens')
-      img(src='/images/2x_Just_Life_for_Pre_Teens.png')
-      .active
-        .title Just Life For Pre Teens
-        .type UX/UI ∙ App
-    a.project(href='/project/freelance-work')
-      img(src='/images/2x_Freelance_Work.png')
-      .active
-        .title Freelance Work
-        .type Print ∙ Logos ∙ Branding
-    a.project(href='/project/volunteer-work')
-      img(src='/images/2x_Volunteer_Work.png')
-      .active
-        .title Volunteer Work
-        .type Speaker Slide Shows ∙ Print
+    +project('brave-and-bold')
+      .title Brave &amp; Bold
+      .type Product Line ∙ Branding ∙ Logo ∙ UX/UI
+    +project('buyepongo')
+      .title Buyepongo Posters
+      .type Print ∙ Illustration
+    +project('native-museum-icons')
+      .title Native Museum
+      .type Logos ∙ Branding ∙ UX/UI
+    +project('ca-lighting-technology-center')
+      .title CA Lighting Technology Center
+      .type Logo ∙ Infographic ∙ Presentations ∙ Print
+    +project('the-tibetan-method')
+      .title The Tibetan Method
+      .type Print ∙ Illustration
+    +project('intertwine-magazine')
+      .title Intertwine Magazine
+      .type Print ∙ Infographic ∙ UX/UI
+    +project('alice-in-wonderland')
+      .title Alice In Wonderland
+      .type Print ∙ Handlettering
+    +project('get-involved-campaign')
+      .title Get Involved Campaign
+      .type Print ∙ App ∙ Video
+    +project('shoki-ramon-house')
+      .title Shoki Ramon House
+      .type Logo ∙ Branding ∙ Print ∙ App
+    +project('just-life-for-pre-teens')
+      .title Just Life For Pre Teens
+      .type UX/UI ∙ App
+    +project('freelance-work')
+      .title Freelance Work
+      .type Print ∙ Logos ∙ Branding
+    +project('volunteer-work')
+      .title Volunteer Work
+      .type Speaker Slide Shows ∙ Print
     .clearfix
   .section
     .heading Designing with integrity
