@@ -16,6 +16,7 @@ $quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', Helvetica, sans-serif;
 
 $tablet: new-breakpoint(max-width 768px 4);
+$phone: new-breakpoint(max-width 520px 2);
 
 * { box-sizing: border-box; }
 

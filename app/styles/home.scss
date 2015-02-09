@@ -60,6 +60,10 @@
       background: linear-gradient(to bottom right, $medium-color, white);
       height: 25vw;
       width: 25vw;
+      @include media($tablet) {
+        height: 50vw;
+        width: 50vw;
+      }
       display: block;
     }
   }
