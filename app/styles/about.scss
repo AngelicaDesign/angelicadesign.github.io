@@ -6,6 +6,9 @@
 
   .hero {
     background: $pale-color;
+    @include media($tablet) {
+      background: transparent;
+    }
   }
 
   .portrait {
@@ -57,12 +60,12 @@
   .quote {
     color: $dark-color;
     background: $pale-color;
-    padding: rem(200);
+    padding: rem(200) 15%;
     text-align: center;
   }
 
   .call-to-action {
-    padding: rem(250);
+    padding: rem(250) 15%;
     text-align: center;
   }
 
@@ -73,6 +76,9 @@
     @include outer-container(100%);
     .portrait {
       @include span-columns(7);
+      @include media($tablet) {
+        @include span-columns(4);
+      }
     }
   }
 
@@ -86,6 +92,15 @@
     .sidebar {
       @include span-columns(4);
       @include shift(1);
+    }
+    @include media($tablet) {
+      .main-content {
+        @include span-columns(4);
+      }
+      .sidebar {
+        @include span-columns(4);
+        @include shift(0);
+      }
     }
   }
 
@@ -111,6 +126,7 @@
     }
     p {
       font-size: 1.3vw;
+      @include media($tablet) { font-size: 4vw; }
       margin: 0;
       margin-top: 50%;
       transform: translateY(-50%);
@@ -123,6 +139,9 @@
     .card {
       width: 33.33vw;
       float: left;
+      @include media($tablet) {
+        width: 100%;
+      }
       // @include span-columns(4);
     }
   }
