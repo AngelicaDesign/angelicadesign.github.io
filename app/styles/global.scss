@@ -18,6 +18,15 @@ $open-sans: 'Open Sans', Helvetica, sans-serif;
 $tablet: new-breakpoint(max-width 768px 4);
 $phone: new-breakpoint(max-width 520px 2);
 
+body {
+  font-size: 1.5vw !important;
+}
+@include media($tablet) {
+  body {
+    font-size: 2.5vw !important;
+  }
+}
+
 * { box-sizing: border-box; }
 
 @mixin contained-image($prefix, $width, $height) {

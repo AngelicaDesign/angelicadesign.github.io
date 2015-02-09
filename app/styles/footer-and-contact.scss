@@ -85,7 +85,6 @@
 
 
 .footer {
-  font-size: 1.5vw;
   padding: 0 $page-padding;
 
   .if-work-well {
@@ -126,7 +125,6 @@
   }
 
   @include media($tablet) {
-    font-size: 2.5vw;
     .footer-top-section {
       padding-top: 2em;
     }
