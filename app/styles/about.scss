@@ -26,6 +26,11 @@
     margin-left: rem(-8);
     margin-top: rem(50);
     display: block;
+
+    @include media($tablet) {
+      float: left;
+      margin-right: 2em;
+    }
   }
 
   .lets-connect {
