@@ -5,25 +5,25 @@
   .if-work-well {
     font-family: $quicksand;
     font-weight: bold;
-    font-size: rem(32);
-    margin-bottom: rem(20);
+    font-size: em(32);
+    margin-bottom: em(20);
   }
 
   .lets-connect {
-    width: rem(495);
+    width: em(495);
   }
 
   .contact-info {
-    font-size: rem(26);
     font-family: $quicksand;
     font-weight: bold;
     .phone, .email {
       line-height: 1.7;
-      margin: rem(7) 0;
+      margin: em(7) 0;
+      font-size: em(26);
     }
     .phone-icon, .email-icon {
-      width: rem(23);
-      margin-right: rem(17);
+      width: em(23);
+      margin-right: em(17);
       vertical-align: middle;
     }
     a.email {
@@ -34,11 +34,12 @@
 
   .copyright {
     color: $brand-dark-color;
-    font-size: rem(16);
+    font-size: em(16);
   }
 }
 
 .contact-page {
+  font-size: 2vmin;
   background: rgba($brand-color, 0.9);
   transition: all 0.5s ease;
   &.hide {
@@ -46,30 +47,30 @@
   }
 
   .if-work-well {
-    margin-left: rem(-3); // Align the "R" to the "L"
+    margin-left: em(-3); // Align the "R" to the "L"
   }
 
   .lets-connect {
-    margin-bottom: rem(130);
+    margin-bottom: em(130);
   }
 
   .contact-info {
-    margin-bottom: rem(40);
+    margin-bottom: em(40);
   }
 
-  @include social-buttons($size: rem(28), $file-prefix: "2x_Contact_");
-  @include resize-wide-share-button(rem(28));
+  @include social-buttons($size: em(28), $file-prefix: "2x_Contact_");
+  @include resize-wide-share-button(em(28));
   .social-buttons {
     border-top: 1px solid white;
-    padding-top: rem(38);
+    padding-top: em(38);
   }
   .social-button {
-    margin-right: rem(23);
+    margin-right: em(23);
   }
 
   .copyright {
     position: absolute;
-    bottom: rem(40);
+    bottom: em(40);
   }
 
   height: 100%;
@@ -84,30 +85,32 @@
 
 
 .footer {
+  font-size: 1.5vw;
   padding: 0 $page-padding;
 
-  .lets-connect-container, .contact-info {
-    padding: rem(75) 0;
-  }
-
   .if-work-well {
-    margin-left: rem(-7); // Align the "T" to the "L"
+    margin-left: em(-7); // Align the "T" to the "L"
   }
 
   .footer-bottom-section {
-    padding: rem(40) 0;
+    padding: em(40) 0;
     border-top: 1px solid white;
   }
 
-  $social-button-size: rem(28);
+  $social-button-size: em(28);
   @include social-buttons($size: $social-button-size, $file-prefix: "2x_Footer_");
   @include resize-wide-share-button($social-button-size);
   .social-button {
-    margin-right: rem(20);
+    margin-right: em(20);
   }
 
   .copyright {
     line-height: $social-button-size;
+  }
+
+
+  .lets-connect-container, .contact-info {
+    padding: em(75) 0;
   }
 
   .footer-bottom-section, .footer-top-section {
@@ -120,10 +123,29 @@
     .contact-info, .social-buttons {
       @include span-columns(5);
     }
-    $mobile: new-breakpoint(max-width rem(1200) 4);
-    @include media($mobile) {
+  }
+
+  @include media($tablet) {
+    font-size: 2.5vw;
+    .footer-top-section {
+      padding-top: 2em;
+    }
+    .lets-connect-container, .contact-info {
+      padding: 0 0;
+      float: none;
+    }
+    .lets-connect-container {
+      margin: 3em 0;
+    }
+    .contact-info {
+      margin: 2em 0;
+    }
+    .footer-bottom-section, .footer-top-section {
       .lets-connect-container, .copyright {
         @include span-columns(4);
+      }
+      .copyright {
+        margin-bottom: 1em;
       }
       .contact-info, .social-buttons {
         @include span-columns(4);
