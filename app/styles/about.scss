@@ -8,7 +8,7 @@
     background: $pale-color;
   }
 
-  .self-image {
+  .portrait {
     display: block;
   }
 
@@ -71,7 +71,7 @@
   .hero {
     padding: 0 $page-padding;
     @include outer-container(100%);
-    .self-image {
+    .portrait {
       @include span-columns(7);
     }
   }
