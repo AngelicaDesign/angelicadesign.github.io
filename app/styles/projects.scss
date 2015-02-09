@@ -11,11 +11,11 @@
     @include outer-container(100%);
   }
   .title {
-    font-size: rem(58);
+    font-size: em(58);
   }
   .project-type {
-    margin-top: rem(10);
-    font-size: rem(32);
+    margin-top: em(10);
+    font-size: em(32);
     font-family: $quicksand;
   }
 
@@ -23,7 +23,7 @@
     @include outer-container(100%);
 
     .copy {
-      padding: rem(175) $page-padding;
+      padding: em(175) $page-padding;
     }
 
     img {
@@ -33,7 +33,7 @@
   }
 
   .project-nav {
-    padding: rem(48);
+    padding: em(48);
     position: relative;
   }
 
@@ -42,17 +42,17 @@
   }
   .project-next, .project-previous {
     display: inline-block;
-    margin: 0 rem(15);
+    margin: 0 em(15);
   }
   .project-previous {
-    @include hover-image("2x_Project_Previous", rem(56), rem(56));
+    @include hover-image("2x_Project_Previous", em(56), em(56));
   }
   .project-next {
-    @include hover-image("2x_Project_Next", rem(56), rem(56));
+    @include hover-image("2x_Project_Next", em(56), em(56));
   }
 
-  @include social-button($name: "share", $size: rem(28), $file-prefix: "2x_Project_");
-  @include resize-wide-share-button(rem(28));
+  @include social-button($name: "share", $size: em(28), $file-prefix: "2x_Project_");
+  @include resize-wide-share-button(em(28));
   .social-button.share {
     position: absolute;
     top: 50%;

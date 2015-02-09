@@ -36,19 +36,19 @@
     }
 
     .title {
-      font-size: rem(18);
+      font-size: em(18);
       font-family: $quicksand;
       font-weight: bold;
     }
 
     .type {
-      margin-top: rem(20);
-      font-size: rem(14);
+      margin-top: em(20);
+      font-size: em(14);
       position: relative;
       &:before {
         content: "";
         position: absolute;
-        top: rem(-10);
+        top: em(-10);
         background: $dark-color;
         left: 40%;
         right: 40%;
@@ -71,15 +71,15 @@
 
   .section {
     text-align: center;
-    margin: rem(200) auto;
+    margin: em(200) auto;
 
     width: 60%;
   }
 
   a.learn-more-button {
-    margin-top: rem(34);
+    margin-top: em(34);
     display: inline-block;
-    @include hover-image("2x_Learn_More_Button", rem(292), rem(60));
+    @include hover-image("2x_Learn_More_Button", em(292), em(60));
   }
 
 }
