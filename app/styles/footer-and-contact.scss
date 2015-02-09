@@ -26,6 +26,10 @@
       margin-right: em(17);
       vertical-align: middle;
     }
+    .phone a {
+      // iOS adds link tag to phone class so lets make sure it's colored white
+      color: white;
+    }
     a.email {
       color: white;
       @include hover-effect;
