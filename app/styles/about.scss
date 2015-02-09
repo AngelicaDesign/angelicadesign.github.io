@@ -6,7 +6,7 @@
 
   .hero {
     background: $pale-color;
-    @include media($tablet) {
+    @include media($small) {
       background: transparent;
     }
   }
@@ -27,7 +27,7 @@
     margin-top: em(50);
     display: block;
 
-    @include media($tablet) {
+    @include media($small) {
       float: left;
       margin-right: 2em;
     }
@@ -81,7 +81,7 @@
     @include outer-container(100%);
     .portrait {
       @include span-columns(7);
-      @include media($tablet) {
+      @include media($small) {
         @include span-columns(4);
       }
     }
@@ -98,7 +98,7 @@
       @include span-columns(4);
       @include shift(1);
     }
-    @include media($tablet) {
+    @include media($small) {
       .main-content {
         @include span-columns(4);
       }
@@ -131,7 +131,7 @@
     }
     p {
       font-size: 1.3vw;
-      @include media($tablet) { font-size: 4vw; }
+      @include media($small) { font-size: 4vw; }
       margin: 0;
       margin-top: 50%;
       transform: translateY(-50%);
@@ -144,7 +144,7 @@
     .card {
       width: 33.33vw;
       float: left;
-      @include media($tablet) {
+      @include media($small) {
         width: 100%;
       }
       // @include span-columns(4);

@@ -15,16 +15,22 @@ $content-line-height: 1.7; // use for paragraphs and content
 $quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', Helvetica, sans-serif;
 
-$tablet: new-breakpoint(max-width 768px 4);
-$phone: new-breakpoint(max-width 520px 2);
+// $large: new-breakpoint(max-width 1680px 12);
+$medium: new-breakpoint(max-width 1280px 12);
+$small: new-breakpoint(max-width 750px 4);
+$tiny: new-breakpoint(max-width 500px 2);
 
 body {
-  // font-size: 1rem !important;
-  font-size: 1.2vw !important;
-}
-@include media($tablet) {
-  body {
-    // font-size: 2.5vw !important;
+  font-size: 1rem !important;
+  // font-size: 1.2vw !important;
+  @include media($medium) {
+    font-size: 1.5vw !important;
+  }
+  @include media($small) {
+    font-size: 2.7vw !important;
+  }
+  @include media($tiny) {
+    font-size: 3.4vw !important;
   }
 }
 

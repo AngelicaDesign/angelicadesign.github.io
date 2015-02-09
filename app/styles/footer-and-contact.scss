@@ -43,7 +43,6 @@
 }
 
 .contact-page {
-  font-size: 2vmin;
   background: rgba($brand-color, 0.9);
   transition: all 0.5s ease;
   &.hide {
@@ -128,7 +127,7 @@
     }
   }
 
-  @include media($tablet) {
+  @include media($small) {
     .footer-top-section {
       padding-top: 2em;
     }
