@@ -115,11 +115,16 @@
 
 
 .slide-out-menu {
-  padding: em(100);
-  // display: none;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  &.hide {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+
+  padding: em(58);
   position: fixed;
+  // width: em(520);
   width: 100%;
-  max-width: em(700);
   background: $brand-color;
   top: 0;
   right: 0;
