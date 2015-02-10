@@ -36,6 +36,11 @@
       return false;
     });
 
+    $('a.menu-button, .slide-out-menu a.close-button').click(function () {
+      $('.slide-out-menu').toggleClass('hide');
+      return false;
+    });
+
   });
 
 })();
