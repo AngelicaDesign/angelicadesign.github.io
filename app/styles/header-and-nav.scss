@@ -3,7 +3,7 @@
 // ------
 
 .header {
-  padding: em(100) 0;
+  padding: em(127) 0;
   text-align: center;
   ul {
     margin-top: em(9);
@@ -120,7 +120,7 @@
   position: fixed;
   width: 100%;
   max-width: em(700);
-  background: rgba($brand-color, 0.9);
+  background: $brand-color;
   top: 0;
   right: 0;
   bottom: 0;

@@ -8,6 +8,7 @@ $brand-dark-color: #2e7c7d;
 $dark-color: #999;
 $medium-color: #ccc;
 $light-color: #d0d2d3;
+$medium-light-color: #b3b3b3;
 $pale-color: #f2f2f2;
 
 $page-padding: 10%;
@@ -23,10 +24,16 @@ $small: new-breakpoint(max-width 750px 4);
 $tiny: new-breakpoint(max-width 500px 2);
 
 body {
-  font-size: 1rem !important;
+  // font-size: 1rem !important;
   // font-size: 1.2vw !important;
   @include media($medium) {
     font-size: 1.5vw !important;
+  }
+  .nav {
+    font-size: 0.7em;
+    @include media($medium) {
+      font-size: 1em;
+    }
   }
   @include media($small) {
     font-size: 2.7vw !important;
@@ -118,7 +125,7 @@ body {
   font-family: $open-sans;
   font-size: em(28);
   font-weight: 200;
-  color: $light-color;
+  color: $medium-light-color;
   // width: em(1366);
   // background: white;
   // position: relative;

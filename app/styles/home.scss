@@ -24,19 +24,20 @@
       line-height: $small-line-height;
       padding: 10%;
       text-align: center;
-      background: rgba(white, 0.9);
+      background: rgba(white, 0.95);
       display: flex;
       flex-direction: column;
       justify-content: center;
 
       opacity: 0;
-      transition: opacity 0.1s ease;
+      transition: opacity 0.2s ease;
     }
     &:hover .active {
       opacity: 1;
     }
 
     .title {
+      text-transform: uppercase;
       font-size: em(18);
       font-family: $quicksand;
       font-weight: bold;
