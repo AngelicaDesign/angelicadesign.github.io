@@ -3,11 +3,13 @@ $em-base: 21.3px;
 
 // Custom settings
 $brand-color: #32c9c2;
+$brand-medium-color: rgba(#2d7c7d, 0.5);
 $brand-dark-color: #2e7c7d;
 $dark-color: #999;
 $medium-color: #ccc;
 $light-color: #d0d2d3;
 $pale-color: #f2f2f2;
+
 $page-padding: 10%;
 $small-line-height: 1.25; // use for headings and ui text
 $content-line-height: 1.7; // use for paragraphs and content
@@ -30,7 +32,7 @@ body {
     font-size: 2.7vw !important;
   }
   @include media($tiny) {
-    font-size: 3.4vw !important;
+    font-size: 3.3vw !important;
   }
 }
 
@@ -41,6 +43,7 @@ body {
   height: $height;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   background-image: url(/images/icons/#{$prefix}.png);
 }
 

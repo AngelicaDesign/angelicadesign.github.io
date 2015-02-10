@@ -12,7 +12,22 @@ mixin nav(name)
   .nav
     a.small-logo(href='/')
     ul
-      li: +link('home') portfolio
-      li: +link('about') about
-      li: +link('blog') blog
-      li: +link('contact') contact
+      li: +link('home') Portfolio
+      li: +link('about') About
+      li: +link('blog') Blog
+      li: +link('contact') Contact
+    a.menu-button
+  .slide-out-menu
+    a.close-button(href='#')
+    .portfolio-icon
+    ul
+      li: +link('home') Portfolio
+      li: +link('about') About
+      li: +link('blog') Blog
+    .heading Contact Info
+    .contact-info
+      .phone= CONFIG.phone
+      a.email(href='mailto:'+CONFIG.email)= CONFIG.email
+    .social-buttons
+      each url, name in CONFIG.social
+        a.social-button(class=name, href=url)

@@ -37,16 +37,6 @@
 }
 
 
-.menu-button {
-  position: absolute;
-  top: em(25);
-  right: em(30);
-  background: url(/images/2x_menu.png) no-repeat;
-  background-size: contain;
-  width: em(35);
-  height: em(35);
-}
-
 
 
 // ---
@@ -54,6 +44,21 @@
 // ---
 
 .nav {
+  text-transform: lowercase;
+
+  .menu-button {
+    @include media($medium) {
+      display: none;
+    }
+    @include media($small) {
+      display: block;
+    }
+    position: absolute;
+    // top: em(25);
+    top: 50%; transform: translateY(-50%);
+    right: em(30);
+    @include contained-image("2x_Menu", em(35), em(35));
+  }
 
   $padding: em(42);
 
@@ -71,6 +76,9 @@
 
   ul {
     display: block;
+    @include media($small) {
+      display: none;
+    }
     position: absolute;
     right: $padding;
     top: 50%;
@@ -90,7 +98,7 @@
       content: ""; // bullet icon
     }
   }
-  a {
+  li a {
     font-size: em(24);
     text-decoration: none;
     font-family: $quicksand;
@@ -102,5 +110,103 @@
   }
   a.active {
     color: $dark-color;
+  }
+}
+
+
+.slide-out-menu {
+  padding: em(100);
+  // display: none;
+  position: fixed;
+  width: 100%;
+  max-width: em(700);
+  background: rgba($brand-color, 0.9);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3000;
+
+  a.close-button {
+    @include hover-image("2x_Menu_X", em(52), em(52));
+    display: block;
+    position: absolute;
+    right: em(30);
+    top: em(30);
+  }
+
+  a {
+    color: white;
+    font-family: $quicksand;
+    font-weight: bold;
+  }
+
+  ul {
+    border-bottom: 1px solid white;
+
+  }
+
+  li {
+    margin-bottom: em(40);
+  }
+  .heading {
+    margin-top: em(24);
+    margin-bottom: em(10);
+  }
+
+  li a {
+    font-size: em(28);
+    text-transform: uppercase;
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      transform: translateY(-4%);
+      margin-right: em(23);
+    }
+  }
+
+  $icon-size: em(28);
+  .home-link:before {
+    @include contained-image("2x_Menu_Portfolio", $icon-size, $icon-size);
+  }
+  .about-link:before {
+    @include contained-image("2x_Menu_About", $icon-size, $icon-size);
+  }
+  .blog-link:before {
+    @include contained-image("2x_Menu_Blog", $icon-size, $icon-size);
+  }
+
+  .phone, .email {
+    color: white;
+    font-family: $quicksand;
+    font-weight: bold;
+    padding: em(15) 0;
+  }
+  .phone:before, .email:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(-4%);
+    margin-right: em(35);
+  }
+  .phone:before {
+    @include contained-image("2x_Menu_option_b_phone", $icon-size, $icon-size);
+
+    // Overriding things
+    background-size: 80% !important;
+
+    // Resizing height proportionally to width
+    $orig-width: em(48);
+    $orig-height: em(74);
+    $width: $icon-size;
+    height: $width * ($orig-height / $orig-width);
+  }
+  .email:before {
+    @include contained-image("2x_Menu_option_b_email", $icon-size, $icon-size);
+  }
+
+  .heading {
+    font-size: em(28);
+    color: $brand-medium-color;
   }
 }
