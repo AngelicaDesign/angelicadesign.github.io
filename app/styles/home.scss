@@ -79,7 +79,7 @@
   a.learn-more-button {
     margin-top: em(34);
     display: inline-block;
-    @include hover-image("2x_Learn_More_Button", em(292), em(60));
+    @include hover-image("learn-more-button", em(292), em(60));
   }
 
 }

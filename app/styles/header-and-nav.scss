@@ -5,33 +5,7 @@
 .header {
   padding: em(127) 0;
   text-align: center;
-  ul {
-    margin-top: em(9);
-    color: $medium-color;
-
-    font-family: $quicksand;
-    font-weight: bold;
-  }
-  li {
-    font-size: em(26);
-    display: inline-block;
-    &:before {
-      font-size: em(15);
-      content: "\2022"; // bullet icon
-      padding: em(8);
-      display: inline-block; // makes translate work
-      transform: translateY(-3%);
-    }
-    &:first-child:before {
-      content: ""; // bullet icon
-      padding: 0;
-    }
-  }
-  li:first-child {
-    margin-left: 0;
-  }
 }
-
 .logo {
   width: em(450);
 }
@@ -55,7 +29,7 @@
     // top: em(25);
     top: 50%; transform: translateY(-50%);
     right: em(30);
-    @include contained-image("2x_Menu", em(35), em(35));
+    @include contained-image("menu", em(35), em(35));
   }
 
   $padding: em(42);
@@ -67,7 +41,7 @@
   background: white; // because this element will cover others
 
   a.small-logo {
-    @include hover-image("2x_Small_Logo", em(344), em(27));
+    @include hover-image("small-logo", em(344), em(27));
     display: block;
     margin-left: $padding;
   }
@@ -130,7 +104,7 @@
   z-index: 3000;
 
   a.close-button {
-    @include hover-image("2x_Menu_X", em(52), em(52));
+    @include hover-image("menu-x", em(52), em(52));
     display: block;
     position: absolute;
     right: em(30);
@@ -170,13 +144,13 @@
 
   $icon-size: em(28);
   .home-link:before {
-    @include contained-image("2x_Menu_Portfolio", $icon-size, $icon-size);
+    @include contained-image("menu-portfolio", $icon-size, $icon-size);
   }
   .about-link:before {
-    @include contained-image("2x_Menu_About", $icon-size, $icon-size);
+    @include contained-image("menu-about", $icon-size, $icon-size);
   }
   .blog-link:before {
-    @include contained-image("2x_Menu_Blog", $icon-size, $icon-size);
+    @include contained-image("menu-blog", $icon-size, $icon-size);
   }
 
   .phone, .email {
@@ -193,7 +167,7 @@
     margin-right: em(35);
   }
   .phone:before {
-    @include contained-image("2x_Menu_option_b_phone", $icon-size, $icon-size);
+    @include contained-image("menu-phone", $icon-size, $icon-size);
 
     // Overriding things
     background-size: 80% !important;
@@ -205,7 +179,7 @@
     height: $width * ($orig-height / $orig-width);
   }
   .email:before {
-    @include contained-image("2x_Menu_option_b_email", $icon-size, $icon-size);
+    @include contained-image("menu-email", $icon-size, $icon-size);
   }
 
   .heading {

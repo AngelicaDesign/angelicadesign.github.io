@@ -61,7 +61,7 @@
     margin-bottom: em(40);
   }
 
-  @include social-buttons($size: em(28), $file-prefix: "2x_Contact_");
+  @include social-buttons(em(28));
   @include resize-wide-share-button(em(28));
   .social-buttons {
     border-top: 1px solid white;
@@ -100,7 +100,7 @@
   }
 
   $social-button-size: em(28);
-  @include social-buttons($size: $social-button-size, $file-prefix: "2x_Footer_");
+  @include social-buttons($social-button-size);
   @include resize-wide-share-button($social-button-size);
   .social-button {
     margin-right: em(20);

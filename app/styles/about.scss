@@ -45,23 +45,6 @@
     margin-top: em(115);
   }
 
-  //--Removing because there's already lots of ways to contact
-  // .phone, .email {
-  //   margin-bottom: em(18);
-  // }
-
-  // @include social-buttons($size: em(28), $file-prefix: "2x_About_");
-
-  // .social-buttons {
-  //   margin-top: em(25);
-  // }
-  // .social-button {
-  //   margin-right: em(18);
-  //   &:last-child {
-  //     margin-right: 0;
-  //   }
-  // }
-
   .philosophy {
     background: $brand-color;
     img {

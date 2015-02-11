@@ -42,15 +42,16 @@
   .project-next, .project-previous {
     display: inline-block;
     margin: 0 em(15);
+    @include hover-effect;
   }
   .project-previous {
-    @include hover-image("2x_Project_Previous", em(56), em(56));
+    @include contained-image("project-previous", em(56), em(56));
   }
   .project-next {
-    @include hover-image("2x_Project_Next", em(56), em(56));
+    @include contained-image("project-next", em(56), em(56));
   }
 
-  @include social-button($name: "share", $size: em(28), $file-prefix: "2x_Project_");
+  @include social-button($name: "share", $size: em(28), $file-prefix: "project-");
   @include resize-wide-share-button(em(28));
   .social-button.share {
     position: absolute;
