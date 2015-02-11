@@ -22,14 +22,22 @@
   .award {
     width: em(296);
 
+    @include media($tiny) {
+      width: 100%;
+    }
     // Move the awards to the left a bit so it looks better and appears centered with title
     margin-left: em(-8);
+    @include media($tiny) {
+      margin-left: 0 !important;
+    }
     margin-top: em(50);
     display: block;
 
     @include media($small) {
       float: left;
-      margin-right: 2em;
+      &:last-child {
+        margin-left: 2em;
+      }
     }
   }
 
@@ -70,6 +78,8 @@
   }
 
   .call-to-action {
+    font-family: $quicksand;
+    font-weight: bold;
     padding: em(250) 15%;
     text-align: center;
   }
@@ -131,7 +141,6 @@
     }
     p {
       font-size: 1.3vw;
-      @include media($small) { font-size: 4vw; }
       margin: 0;
       margin-top: 50%;
       transform: translateY(-50%);
@@ -140,13 +149,13 @@
   }
 
   .philosophy {
+    @include media($small) {
+      display: none;
+    }
     @include outer-container(100%);
     .card {
       width: 33.33vw;
       float: left;
-      @include media($small) {
-        width: 100%;
-      }
       // @include span-columns(4);
     }
   }

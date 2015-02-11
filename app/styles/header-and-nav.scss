@@ -47,9 +47,7 @@
   text-transform: lowercase;
 
   .menu-button {
-    @include media($medium) {
-      display: none;
-    }
+    display: none;
     @include media($small) {
       display: block;
     }

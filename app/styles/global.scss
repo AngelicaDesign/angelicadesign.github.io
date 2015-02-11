@@ -162,6 +162,8 @@ h1, h2, h3, h4, h5, h6 {
   @include contained-image("2x_Top_Button", em(53), em(53));
   @include hover-effect;
 
+  @include media($small) { display: none; }
+
   position: fixed;
   right: em(40);
   bottom: em(40);
