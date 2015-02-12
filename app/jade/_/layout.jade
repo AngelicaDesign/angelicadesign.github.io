@@ -15,42 +15,44 @@ html(lang='en')
     link(rel='stylesheet', href='/styles/main.css')
 
   body(class=NAME ? NAME+'-page' : '')
-    include contact-page
+    .nano-content
+      include contact-page
 
-    block header
-      include _nav
-      +nav(NAME)
+      block header
+        include _nav
+        +nav(NAME)
 
-    .main
-      block content
+      .main
+        block content
 
-    a.to-top-button.hide(href='#')
+      a.to-top-button.hide(href='#')
 
-    .footer
-      .footer-top-section
-        .lets-connect-container
-          .if-work-well Think we'd work well together?
-          img.lets-connect(src='/images/icons/2x_lets-connect.png')
-        .contact-info
-          .phone
-            img.phone-icon(src='/images/icons/2x_phone.png')
-            = CONFIG.phone
-          a.email(href='mailto:'+CONFIG.email)
-            img.email-icon(src='/images/icons/2x_email.png')
-            = CONFIG.email
-      .footer-bottom-section
-        .copyright= CONFIG.copyright
-        .social-buttons
-          each url, name in CONFIG.social
-            a.social-button(class=name, href=url)
+      .footer
+        .footer-top-section
+          .lets-connect-container
+            .if-work-well Think we'd work well together?
+            img.lets-connect(src='/images/icons/2x_lets-connect.png')
+          .contact-info
+            .phone
+              img.phone-icon(src='/images/icons/2x_phone.png')
+              = CONFIG.phone
+            a.email(href='mailto:'+CONFIG.email)
+              img.email-icon(src='/images/icons/2x_email.png')
+              = CONFIG.email
+        .footer-bottom-section
+          .copyright= CONFIG.copyright
+          .social-buttons
+            each url, name in CONFIG.social
+              a.social-button(class=name, href=url)
 
     // build:js /scripts/vendor.min.js
     script(src='/bower_components/jquery/dist/jquery.js')
     script(src='/bower_components/sticky/jquery.sticky.js')
+    script(src='/bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.js')
+    script(src='/scripts/has-scrollbar.js')
     // endbuild
 
     // build:js /scripts/main.min.js
     script(src='/scripts/main.js')
-    script(src='/scripts/main-helper.js')
     // endbuild
     //- include analytics

@@ -1,5 +1,6 @@
 @import url("http://fonts.googleapis.com/css?family=Quicksand:400,700|Open+Sans");
 
+@import "nanoscroller";
 @import "reset";   // Reset all styles
 @import "bourbon"; // Use this for its functions and addons
 @import "neat";    // Grid framework
@@ -24,4 +25,7 @@
 }
 .nav {
   z-index: 3000;
+}
+.nano-pane {
+  z-index: 4000;
 }

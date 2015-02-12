@@ -1,9 +1,18 @@
 /* global $: false */
 
+
+
 (function () {
   'use strict';
 
   $(document).ready(function () {
+
+    // Visible scrollbars interfere with our layouts so we'll make our own
+    // whenever we see a scrollbar
+    var isScrollbarVisible = hasScrollbar('y');
+    if (isScrollbarVisible) {
+      $('body').addClass('nano').nanoScroller();
+    }
 
     // Make to-top button appear when user scrolls past a certain point
     window.addEventListener('scroll', function () {
@@ -13,9 +22,16 @@
     // Enable sticky nav on all except home page because on that
     // page we have it disappear until user scroll down.
     if ($('.home-page').length) {
-      window.addEventListener('scroll', function () {
-        $('.nav').toggle(window.scrollY > $('.header').outerHeight() - $('.nav').outerHeight());
-      });
+      var scrollingToGetToNav = $('.header').outerHeight() - $('.nav').outerHeight();
+      if (isScrollbarVisible) {
+        $('.nano-content').scroll(function () {
+          $('.nav').toggle($('.nano-content').scrollTop() > scrollingToGetToNav);
+        });
+      } else {
+        window.addEventListener('scroll', function () {
+          $('.nav').toggle(window.scrollY > scrollingToGetToNav);
+        });
+      }
     } else {
       $('.nav').sticky();
     }
