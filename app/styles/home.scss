@@ -5,8 +5,17 @@
 
 .home-page .main {
 
+  .projects-container {
+    background: $pale-color;
+  }
+
+  $projects-max-width: 80vw;
   .projects {
     @include outer-container(100%);
+    max-width: $projects-max-width;
+    @include media($medium) {
+      max-width: none;
+    }
   }
 
   a.project {
@@ -18,6 +27,25 @@
     display: block;
     float: left;
     // font-size: 1.5em;
+
+    img {
+      display: block;
+
+      height: 25vw;
+      width: 25vw;
+      @include media($small) {
+        height: 50vw;
+        width: 50vw;
+      }
+
+      $projects-per-row: 4;
+      max-width: $projects-max-width / $projects-per-row;
+      max-height: $projects-max-width / $projects-per-row;
+      @include media($medium) {
+        max-width: none;
+        max-height: none;
+      }
+    }
 
     .active {
       @include cover;
@@ -56,17 +84,6 @@
         right: 40%;
         height: 1px;
       }
-    }
-
-    img {
-      background: linear-gradient(to bottom right, $medium-color, white);
-      height: 25vw;
-      width: 25vw;
-      @include media($small) {
-        height: 50vw;
-        width: 50vw;
-      }
-      display: block;
     }
   }
 
