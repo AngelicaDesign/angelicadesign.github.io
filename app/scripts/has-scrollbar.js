@@ -1,5 +1,6 @@
 // https://tylercipriani.com/2014/07/12/crossbrowser-javascript-scrollbar-detection.html
 // https://gist.github.com/numee/1e7a19cd26113323f1ae.js
+// jshint ignore: start
 
 /**
  * hasScrollbar is a JavaScript function to determine if the current
