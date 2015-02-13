@@ -3,7 +3,10 @@
 // ------
 
 .header {
-  padding: em(127) 0;
+  padding: em(140) 0;
+  @include media($small) {
+    padding: em(120) 0;
+  }
   text-align: center;
 }
 .logo {
@@ -19,6 +22,7 @@
 
 .nav {
   text-transform: lowercase;
+  height: em(64);
 
   .menu-button {
     display: none;
@@ -44,6 +48,9 @@
     @include hover-image("small-logo", em(344), em(27));
     display: block;
     margin-left: $padding;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   ul {
@@ -71,7 +78,7 @@
     }
   }
   li a {
-    font-size: em(24);
+    font-size: em(26);
     text-decoration: none;
     font-family: $quicksand;
     font-weight: bold;

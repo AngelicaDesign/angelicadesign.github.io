@@ -1,24 +1,27 @@
 // Bourbon settings
 $em-base: 21.3px;
+// $em-base: 18px;
 
 // Custom settings
 $brand-color: #32c9c2;
 $brand-medium-color: rgba(#2d7c7d, 0.5);
 $brand-dark-color: #2e7c7d;
-$dark-color: #999;
+$dark-color: #8c8c8c;
 $medium-color: #ccc;
 $light-color: #d0d2d3;
 $medium-light-color: #b3b3b3;
 $pale-color: #f2f2f2;
 
-$page-padding: 10%;
+$page-padding: 8%;
+$vertical-content-padding: em(100);
+$heading-top-margin: em(50);
 $small-line-height: 1.25; // use for headings and ui text
 $content-line-height: 1.7; // use for paragraphs and content
 
 $quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', Helvetica, sans-serif;
 
-// $large: new-breakpoint(max-width 1680px 12);
+$large: new-breakpoint(max-width 1680px 12);
 $medium: new-breakpoint(max-width 1280px 12);
 $small: new-breakpoint(max-width 750px 4);
 $tiny: new-breakpoint(max-width 500px 2);
@@ -27,22 +30,21 @@ $tiny: new-breakpoint(max-width 500px 2);
 @-ms-viewport { width: device-width; }
 
 body {
-  // font-size: 1rem !important;
-  // font-size: 1.2vw !important;
+  font-size: 0.8vw !important;
+  @include media($large) {
+    font-size: 1rem !important;
+  }
   @include media($medium) {
     font-size: 1.5vw !important;
-  }
-  .nav {
-    font-size: 0.7em;
-    @include media($medium) {
-      font-size: 1em;
-    }
   }
   @include media($small) {
     font-size: 2.7vw !important;
   }
   @include media($tiny) {
-    font-size: 3.3vw !important;
+    font-size: 3.4vw !important;
+  }
+  .contact-page {
+    font-size: 1.8vmin;
   }
 }
 body.nano {
@@ -57,6 +59,15 @@ body.nano {
 }
 
 * { box-sizing: border-box; }
+
+@mixin content-padding {
+  padding: $vertical-content-padding*2 $page-padding;
+  padding-top: $vertical-content-padding*2 - $heading-top-margin;
+  @include media($medium) {
+    padding: $vertical-content-padding $page-padding;
+    padding-top: $vertical-content-padding - $heading-top-margin;
+  }
+}
 
 @mixin contained-image($prefix, $width, $height) {
   width: $width;
@@ -135,7 +146,7 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
 
 body {
   font-family: $open-sans;
-  font-size: em(28);
+  // font-size: em(28);
   font-weight: 200;
   color: $medium-light-color;
   // width: em(1366);
@@ -192,11 +203,11 @@ h1, h2, h3, h4, h5, h6 {
 .heading {
   line-height: $small-line-height;
   font-weight: bold;
-  font-size: em(38);
+  font-size: em(28);
   text-transform: uppercase;
   font-family: $quicksand;
   color: $brand-color;
-  margin: em(16) 0;
+  margin: $heading-top-margin 0 em(16);
 }
 
 p {

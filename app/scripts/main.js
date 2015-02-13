@@ -9,6 +9,7 @@
 
     // Visible scrollbars interfere with our layouts so we'll make our own
     // whenever we see a scrollbar
+    var isScrollbarVisible = false;
     // var isScrollbarVisible = hasScrollbar('y');
     // if (isScrollbarVisible) {
     //   $('body').addClass('nano').nanoScroller();

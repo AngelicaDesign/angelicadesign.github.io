@@ -1,9 +1,5 @@
 .about-page .main {
 
-  .heading {
-    margin-top: em(50);
-  }
-
   .hero {
     background: $pale-color;
     @include media($small) {
@@ -16,7 +12,10 @@
   }
 
   .content-wrapper {
-    padding-bottom: em(145);
+    @include content-padding;
+    @include media($tiny) {
+      padding-top: 0;
+    }
   }
 
   .award {
@@ -26,18 +25,25 @@
       width: 100%;
     }
     // Move the awards to the left a bit so it looks better and appears centered with title
-    margin-left: em(-8);
-    @include media($tiny) {
-      margin-left: 0 !important;
+    margin-left: em(-40);
+    @include media($small) {
+      float: left;
+      width: 50%;
+      margin: 0 !important;
+      padding: 3%;
     }
     margin-top: em(50);
     display: block;
 
+    @include media($tiny) {
+      width: 100%;
+      padding: em(20) 15%;
+    }
+  }
+
+  .sidebar .heading {
     @include media($small) {
-      float: left;
-      &:last-child {
-        margin-left: 2em;
-      }
+      text-align: center;
     }
   }
 
@@ -49,7 +55,10 @@
     background: $brand-color;
     img {
       width: 100%;
-      padding: 20%;
+      padding: 20% 30%;
+      @include media($medium) {
+        // padding: 25%;
+      }
     }
   }
 
@@ -63,6 +72,7 @@
   .call-to-action {
     font-family: $quicksand;
     font-weight: bold;
+    color: $medium-color;
     padding: em(250) 15%;
     text-align: center;
   }
@@ -73,7 +83,7 @@
     padding: 0 $page-padding;
     @include outer-container(100%);
     .portrait {
-      @include span-columns(7);
+      @include span-columns(8);
       @include media($small) {
         @include span-columns(4);
       }
@@ -81,14 +91,12 @@
   }
 
   .content-wrapper {
-    padding-left: $page-padding;
-    padding-right: $page-padding;
     @include outer-container(100%);
     .main-content {
-      @include span-columns(7);
+      @include span-columns(8);
     }
     .sidebar {
-      @include span-columns(4);
+      @include span-columns(3);
       @include shift(1);
     }
     @include media($small) {
@@ -116,7 +124,7 @@
       right: 0;
       background: #fff;
       margin: 0;
-      padding: 11%;
+      padding: 0 11%;
       text-align: center;
     }
     &:hover .description {
@@ -137,9 +145,8 @@
     }
     @include outer-container(100%);
     .card {
-      width: 33.33vw;
+      width: 33.33%;
       float: left;
-      // @include span-columns(4);
     }
   }
 

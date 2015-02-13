@@ -7,10 +7,17 @@
     text-align: center;
     font-weight: bold;
     line-height: $small-line-height;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     @include outer-container(100%);
   }
   .title {
     font-size: em(58);
+    @include media($small) {
+      font-size: em(46);
+    }
   }
   .project-type {
     margin-top: em(10);
@@ -22,7 +29,7 @@
     @include outer-container(100%);
 
     .copy {
-      padding: em(175) $page-padding;
+      @include content-padding;
     }
 
     img {
