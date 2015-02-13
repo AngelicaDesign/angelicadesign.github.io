@@ -46,6 +46,9 @@ body {
   .contact-page {
     font-size: 1.8vmin;
   }
+  &.home-page .project {
+    font-size: 1.25em;
+  }
 }
 body.nano {
   position: absolute;
