@@ -9,10 +9,10 @@
 
     // Visible scrollbars interfere with our layouts so we'll make our own
     // whenever we see a scrollbar
-    var isScrollbarVisible = hasScrollbar('y');
-    if (isScrollbarVisible) {
-      $('body').addClass('nano').nanoScroller();
-    }
+    // var isScrollbarVisible = hasScrollbar('y');
+    // if (isScrollbarVisible) {
+    //   $('body').addClass('nano').nanoScroller();
+    // }
 
     // Make to-top button appear when user scrolls past a certain point
     window.addEventListener('scroll', function () {
