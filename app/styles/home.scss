@@ -26,7 +26,6 @@
     position: relative;
     display: block;
     float: left;
-    // font-size: 1.5em;
 
     img {
       display: block;
@@ -75,15 +74,6 @@
       margin-top: em(20);
       font-size: em(14);
       position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        top: em(-10);
-        background: $dark-color;
-        left: 40%;
-        right: 40%;
-        height: 1px;
-      }
     }
   }
 
