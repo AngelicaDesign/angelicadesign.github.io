@@ -83,12 +83,42 @@
     font-family: $quicksand;
     font-weight: bold;
     color: $medium-color;
+    transition: color 0.2s ease;
     &:hover {
       color: $brand-color;
     }
   }
   a.active {
     color: $dark-color;
+  }
+  a.active.contact-link {
+    color: $brand-color;
+  }
+  a.contact-link {
+    position: relative;
+  }
+  a.contact-link:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    $scale: 0.5;
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    @include contained-image("contact-arrow", em(30*$scale), em(18*$scale));
+
+    transition: top 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+  }
+  a.contact-link:hover:after {
+    visibility: visible;
+    opacity: 1;
+    top: 110%;
+  }
+  a.contact-link.active:hover:after {
+    visibility: hidden;
   }
 }
 
