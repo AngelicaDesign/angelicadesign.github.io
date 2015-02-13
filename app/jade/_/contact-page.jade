@@ -3,12 +3,8 @@
     .if-work-well Ready to make things happen?
     img.lets-connect(src='/images/icons/2x_lets-connect.png')
     .contact-info
-      .phone
-        img.phone-icon(src='/images/icons/2x_phone.png')
-        = CONFIG.phone
-      a.email(href='mailto:'+CONFIG.email)
-        img.email-icon(src='/images/icons/2x_email.png')
-        = CONFIG.email
+      .phone= CONFIG.phone
+      a.email(href='mailto:'+CONFIG.email)= CONFIG.email
     .social-buttons
       each url, name in CONFIG.social
         a.social-button(class=name, href=url)

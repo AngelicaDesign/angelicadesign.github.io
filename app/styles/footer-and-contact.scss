@@ -14,25 +14,11 @@
   }
 
   .contact-info {
-    font-family: $quicksand;
-    font-weight: bold;
+    @include contact-info("", em(24));
     .phone, .email {
       line-height: 1.7;
       margin: em(7) 0;
       font-size: em(26);
-    }
-    .phone-icon, .email-icon {
-      width: em(23);
-      margin-right: em(17);
-      vertical-align: middle;
-    }
-    .phone a {
-      // iOS adds link tag to phone class so lets make sure it's colored white
-      color: white;
-    }
-    a.email {
-      color: white;
-      @include hover-effect;
     }
   }
 

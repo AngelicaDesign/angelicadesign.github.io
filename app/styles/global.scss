@@ -143,6 +143,41 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
   background-repeat: no-repeat;
 }
 
+@mixin contact-info($prefix, $icon-size) {
+  $icon-size: em(24);
+  .phone, .email {
+    color: white;
+    font-family: $quicksand;
+    font-weight: bold;
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: em(18);
+    }
+  }
+  .phone:before {
+    @include contained-image("#{$prefix}phone", $icon-size, $icon-size);
+
+    // Resizing height proportionally to width
+    $orig-width: em(48);
+    $orig-height: em(74);
+    $width: $icon-size;
+    height: $width * ($orig-height / $orig-width);
+  }
+  .email:before {
+    @include contained-image("#{$prefix}email", $icon-size, $icon-size);
+  }
+  .phone a {
+    // iOS adds link tag to phone class so lets make sure it's colored white
+    color: white;
+  }
+  a.email {
+    color: white;
+    @include hover-effect;
+  }
+}
+
 
 
 

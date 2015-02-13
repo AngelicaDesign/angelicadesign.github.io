@@ -33,12 +33,8 @@ html(lang='en')
             .if-work-well Think we'd work well together?
             img.lets-connect(src='/images/icons/2x_lets-connect.png')
           .contact-info
-            .phone
-              img.phone-icon(src='/images/icons/2x_phone.png')
-              = CONFIG.phone
-            a.email(href='mailto:'+CONFIG.email)
-              img.email-icon(src='/images/icons/2x_email.png')
-              = CONFIG.email
+            .phone= CONFIG.phone
+            a.email(href='mailto:'+CONFIG.email)= CONFIG.email
         .footer-bottom-section
           .copyright= CONFIG.copyright
           .social-buttons

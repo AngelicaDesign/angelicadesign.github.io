@@ -198,34 +198,18 @@
     @include contained-image("menu-blog", $icon-size, $icon-size);
   }
 
+  @include contact-info("menu-", $icon-size);
   .phone, .email {
-    color: white;
-    font-family: $quicksand;
-    font-weight: bold;
     padding: em(15) 0;
-  }
-  .phone:before, .email:before {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    transform: translateY(-4%);
-    margin-right: em(35);
+    &:before {
+      margin-right: em(35);
+    }
   }
   .phone:before {
-    @include contained-image("menu-phone", $icon-size, $icon-size);
-
-    // Overriding things
     background-size: 80% !important;
+  }
 
-    // Resizing height proportionally to width
-    $orig-width: em(48);
-    $orig-height: em(74);
-    $width: $icon-size;
-    height: $width * ($orig-height / $orig-width);
-  }
-  .email:before {
-    @include contained-image("menu-email", $icon-size, $icon-size);
-  }
+
 
   .heading {
     font-size: em(28);
