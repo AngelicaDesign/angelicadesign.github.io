@@ -164,15 +164,16 @@
 
   ul {
     border-bottom: 1px solid white;
-
+    padding-top: em(40);
+    padding-bottom: em(15);
   }
 
   li {
-    margin-bottom: em(40);
+    margin-bottom: em(35);
   }
   .heading {
-    margin-top: em(24);
-    margin-bottom: em(10);
+    margin-top: em(35);
+    margin-bottom: em(15);
   }
 
   li a {
