@@ -28,18 +28,14 @@ html(lang='en')
       a.to-top-button.hide(href='#')
 
       .footer
-        .footer-top-section
-          .lets-connect-container
-            .if-work-well Think we'd work well together?
-            img.lets-connect(src='/images/icons/2x_lets-connect.png')
+        .content
           .contact-info
             .phone= CONFIG.phone
             a.email(href='mailto:'+CONFIG.email)= CONFIG.email
-        .footer-bottom-section
-          .copyright= CONFIG.copyright
           .social-buttons
             each url, name in CONFIG.social
               a.social-button(class=name, href=url)
+          .copyright= CONFIG.copyright
 
     // build:js /scripts/vendor.min.js
     script(src='/bower_components/jquery/dist/jquery.js')

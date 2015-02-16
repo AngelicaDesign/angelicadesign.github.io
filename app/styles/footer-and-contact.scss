@@ -13,15 +13,6 @@
     width: em(495);
   }
 
-  .contact-info {
-    @include contact-info("", em(24));
-    .phone, .email {
-      line-height: 1.7;
-      margin: em(7) 0;
-      font-size: em(26);
-    }
-  }
-
   .copyright {
     color: $brand-dark-color;
     font-size: em(16);
@@ -45,6 +36,12 @@
 
   .contact-info {
     margin-bottom: em(40);
+    @include contact-info("", em(24));
+    .phone, .email {
+      line-height: 1.7;
+      margin: em(7) 0;
+      font-size: em(26);
+    }
   }
 
   @include social-buttons(em(28));
@@ -75,69 +72,60 @@
 
 .footer {
   padding: 0 $page-padding;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  .if-work-well {
-    margin-left: em(-7); // Align the "T" to the "L"
+  .contact-info {
+    padding: em(24) 0;
+    @include contact-info("", em(14));
+    .phone, .email {
+      padding: em(10) 0;
+      font-size: em(22);
+      display: inline-block;
+      &:before {
+        margin-right: em(7);
+        transform: translateY(-7%);
+        @include media($small) {
+          display: none;
+        }
+      }
+    }
+    .phone:before {
+      background-size: 80% !important;
+    }
+    .phone {
+      margin-right: em(20);
+    }
   }
 
-  .footer-bottom-section {
-    padding: em(40) 0;
-    border-top: 1px solid white;
+  .social-buttons {
+    padding: em(14);
+    border: 1px solid white;
+    border-left: none;
+    border-right: none;
   }
-
-  $social-button-size: em(28);
+  $social-button-size: em(24);
   @include social-buttons($social-button-size);
   @include resize-wide-share-button($social-button-size);
   .social-button {
     margin-right: em(20);
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .copyright {
-    line-height: $social-button-size;
-  }
-
-
-  .lets-connect-container, .contact-info {
-    padding: em(75) 0;
+    padding: em(30) 0;
+    font-size: em(13);
+    line-height: $small-line-height;
   }
 
   .footer-bottom-section, .footer-top-section {
     margin-left: $page-padding;
     margin-right: $page-padding;
     @include outer-container(100%);
-    .lets-connect-container, .copyright {
-      @include span-columns(7);
-    }
-    .contact-info, .social-buttons {
-      @include span-columns(5);
-    }
-  }
-
-  @include media($small) {
-    .footer-top-section {
-      padding-top: 2em;
-    }
-    .lets-connect-container, .contact-info {
-      padding: 0 0;
-      float: none;
-    }
-    .lets-connect-container {
-      margin: 3em 0;
-    }
-    .contact-info {
-      margin: 2em 0;
-    }
-    .footer-bottom-section, .footer-top-section {
-      .lets-connect-container, .copyright {
-        @include span-columns(4);
-      }
-      .copyright {
-        margin-bottom: 1em;
-      }
-      .contact-info, .social-buttons {
-        @include span-columns(4);
-      }
-    }
   }
 
 

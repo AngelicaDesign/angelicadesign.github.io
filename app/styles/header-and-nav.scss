@@ -198,15 +198,17 @@
     @include contained-image("menu-blog", $icon-size, $icon-size);
   }
 
-  @include contact-info("menu-", $icon-size);
-  .phone, .email {
-    padding: em(15) 0;
-    &:before {
-      margin-right: em(35);
+  .contact-info {
+    @include contact-info("menu-", $icon-size);
+    .phone, .email {
+      padding: em(15) 0;
+      &:before {
+        margin-right: em(35);
+      }
     }
-  }
-  .phone:before {
-    background-size: 80% !important;
+    .phone:before {
+      background-size: 80% !important;
+    }
   }
 
 
