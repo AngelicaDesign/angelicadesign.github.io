@@ -159,6 +159,7 @@
     color: white;
     font-family: $quicksand;
     font-weight: bold;
+    @include hover-effect;
   }
 
   ul {
@@ -190,9 +191,11 @@
   $icon-size: em(28);
   .home-link:before {
     @include contained-image("menu-portfolio", $icon-size, $icon-size);
+    transform: translateY(em(-5));
   }
   .about-link:before {
     @include contained-image("menu-about", $icon-size, $icon-size);
+    transform: translateY(em(-2));
   }
   .blog-link:before {
     @include contained-image("menu-blog", $icon-size, $icon-size);
@@ -211,7 +214,19 @@
     }
   }
 
-
+  .social-buttons {
+    padding: em(30) 0 em(45) ($icon-size + em(35));
+    border-bottom: 1px solid white;
+  }
+  $social-button-size: em(24);
+  @include social-buttons($social-button-size);
+  @include resize-wide-share-button($social-button-size);
+  .social-button {
+    margin-right: em(20);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
   .heading {
     font-size: em(28);

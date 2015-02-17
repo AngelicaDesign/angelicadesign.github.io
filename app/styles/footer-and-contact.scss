@@ -6,7 +6,7 @@
     font-family: $quicksand;
     font-weight: bold;
     font-size: em(32);
-    margin-bottom: em(20);
+    margin-bottom: em(15);
   }
 
   .lets-connect {
@@ -27,7 +27,7 @@
   }
 
   .if-work-well {
-    margin-left: em(-3); // Align the "R" to the "L"
+    margin-left: em(-2); // Align the "R" to the "L"
   }
 
   .lets-connect {
@@ -78,11 +78,11 @@
   align-items: center;
 
   .contact-info {
-    padding: em(24) 0;
+    padding: em(30) 0 em(16);
     @include contact-info("", em(14));
     .phone, .email {
-      padding: em(10) 0;
-      font-size: em(22);
+      padding: em(4) 0;
+      font-size: em(20);
       display: inline-block;
       &:before {
         margin-right: em(7);
@@ -94,6 +94,10 @@
     }
     .phone:before {
       background-size: 80% !important;
+      transform: translateY(-7%);
+    }
+    .email:before {
+      transform: translateY(-9%);
     }
     .phone {
       margin-right: em(20);
@@ -117,7 +121,7 @@
   }
 
   .copyright {
-    padding: em(30) 0;
+    padding: em(30) 0 em(60);
     font-size: em(13);
     line-height: $small-line-height;
   }

@@ -12,7 +12,6 @@
   $projects-max-width: 80vw;
   .projects {
     @include outer-container(100%);
-    max-width: $projects-max-width;
     @include media($medium) {
       max-width: none;
     }
@@ -26,7 +25,10 @@
     position: relative;
     display: block;
     float: left;
-    width: 25%;
+    width: 20%;
+    @include media($large) {
+      width: 25%;
+    }
     @include media($small) {
       width: 50%;
     }
@@ -34,14 +36,6 @@
     img {
       display: block;
       width: 100%;
-
-      $projects-per-row: 4;
-      max-width: $projects-max-width / $projects-per-row;
-      max-height: $projects-max-width / $projects-per-row;
-      @include media($medium) {
-        max-width: none;
-        max-height: none;
-      }
     }
 
     .active {
@@ -69,7 +63,7 @@
     }
 
     .type {
-      margin-top: em(10);
+      margin-top: em(5);
       font-size: em(14);
       position: relative;
     }
