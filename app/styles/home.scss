@@ -26,16 +26,14 @@
     position: relative;
     display: block;
     float: left;
+    width: 25%;
+    @include media($small) {
+      width: 50%;
+    }
 
     img {
       display: block;
-
-      height: 25vw;
-      width: 25vw;
-      @include media($small) {
-        height: 50vw;
-        width: 50vw;
-      }
+      width: 100%;
 
       $projects-per-row: 4;
       max-width: $projects-max-width / $projects-per-row;
@@ -71,7 +69,7 @@
     }
 
     .type {
-      margin-top: em(20);
+      margin-top: em(10);
       font-size: em(14);
       position: relative;
     }
