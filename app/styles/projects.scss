@@ -35,6 +35,10 @@
     img {
       width: 100%;
       display: block;
+      &.half-size {
+        float: left;
+        width: 50%;
+      }
     }
   }
 
@@ -67,3 +71,18 @@
   }
 
 }
+
+.project-page.brave-and-bold {
+  img[src*="-4"] {
+    background: #c2af73;
+    padding: 29%; // (100 - 43)/2)%
+  }
+  img[src*="-5"] {
+    background: black;
+    padding: 33%; // (100 - 34)/2)%
+  }
+  img[src*="-10"], img[src*="-11"] {
+    width: 50% !important;
+  }
+}
+

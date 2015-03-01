@@ -1,0 +1,23 @@
+extends layout
+
+mixin project(num, type)
+  if !type
+    img(src='/images/projects/#{PROJ}/#{PROJ}-#{num}.jpg')&attributes(attributes)
+  else
+    img(src='/images/projects/#{PROJ}/#{PROJ}-#{num}.#{type}')&attributes(attributes)
+
+mixin project-half(num, type)
+  +project(num, type)(class='half-size')
+
+block content
+  .project-page(class=PROJ)
+    .hero(style={'background-image': 'url(/images/projects/#{PROJ}/#{PROJ}-1.jpg)'})
+      h1.title= TITLE
+      .project-type= TYPE
+    .project-content
+      block project-content
+    .project-nav
+      a.social-button.share(href=CONFIG.social.share)
+      .previous-and-next
+        a.project-previous(href='#')
+        a.project-next(href='#')
