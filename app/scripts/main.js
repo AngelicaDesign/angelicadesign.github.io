@@ -1,11 +1,12 @@
 /* global $: false */
 
-
-
 (function () {
   'use strict';
 
   $(document).ready(function () {
+    $('p').unorphanize(2);
+    $('.project .title').unorphanize();
+    $('.project .type').unorphanize(2);
 
     // Visible scrollbars interfere with our layouts so we'll make our own
     // whenever we see a scrollbar
@@ -37,7 +38,7 @@
       $('.nav').sticky();
     }
 
-    // Scroll to top when thi button is clicked
+    // Scroll to top when the button is clicked
     $('a.to-top-button').click(function () {
       $('html, body').animate({ scrollTop: 0 }, 'slow');
       return false;
