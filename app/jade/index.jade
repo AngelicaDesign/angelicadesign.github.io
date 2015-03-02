@@ -9,51 +9,30 @@ block prepend header
       a.menu-button(href='#')
     img.logo(src='/images/icons/2x_main-logo.png')
 
-mixin project(name)
-  a.project(href='/project/'+name)
-    img(src='/images/project-thumbnails/'+name+'.jpg')
+mixin project(index)
+  - var proj = CONFIG.projects[index];
+  a.project(href='/project/'+proj.name)
+    img(src='/images/project-thumbnails/'+proj.name+'.jpg')
     .active
-      block
+      .title!= proj.title
+      .type= proj.type
 
 block content
   .projects-container
     .projects
-      +project('brave-and-bold')
-        .title Brave &amp; Bold
-        .type Product Line ∙ Branding ∙ Logo ∙ UI/UX
-      +project('buyepongo')
-        .title Buyepongo Posters
-        .type Print ∙ Illustration
-      //- +project('native-museum-icons')
-      //-   .title Native Museum
-      //-   .type Logos ∙ Branding ∙ UI/UX
-      +project('ca-lighting-technology-center')
-        .title CA Lighting Tech Center
-        .type Logo ∙ Infographic ∙ Presentations ∙ Print
-      +project('the-tibetan-method')
-        .title The Tibetan Method
-        .type Print ∙ Illustration
-      //- +project('intertwine-magazine')
-      //-   .title Intertwine Magazine
-      //-   .type Print ∙ Infographic ∙ UI/UX
-      +project('alice-in-wonderland')
-        .title Alice In Wonderland
-        .type Print ∙ Handlettering
-      //- +project('get-involved-campaign')
-      //-   .title Get Involved Campaign
-      //-   .type Print ∙ App ∙ Video
-      //- +project('shoki-ramon-house')
-      //-   .title Shoki Ramon House
-      //-   .type Logo ∙ Branding ∙ Print ∙ App
-      //- +project('just-life-for-pre-teens')
-      //-   .title Just Life For Pre Teens
-      //-   .type UI/UX ∙ App
-      +project('freelance-work')
-        .title Freelance Work
-        .type Print ∙ Logos ∙ Branding
-      +project('volunteer-work')
-        .title Volunteer Work
-        .type Speaker Slide Shows ∙ Print
+
+      +project(0)
+      +project(1)
+      //- +project(2)
+      +project(3)
+      +project(4)
+      //- +project(5)
+      +project(6)
+      //- +project(7)
+      //- +project(8)
+      //- +project(9)
+      +project(10)
+      +project(11)
   .section
     .heading Designing with integrity
     p I am a passionate designer who believes in the power of good design and good intentions. My intention is to create compassionate, well-executed work that aims to communicate and be visually stimulating.

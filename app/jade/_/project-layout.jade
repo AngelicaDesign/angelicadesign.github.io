@@ -1,5 +1,10 @@
 extends layout
 
+//- block append vars
+//-   - TITLE = CONFIG.projects[PROJ_INDEX].title
+//-   - PROJ = CONFIG.projects[PROJ_INDEX].name
+//-   - TYPE = CONFIG.projects[PROJ_INDEX].type
+
 mixin project(num, type)
   if !type
     img(src='/images/projects/#{PROJ}/#{PROJ}-#{num}.jpg')&attributes(attributes)

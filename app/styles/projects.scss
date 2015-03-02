@@ -26,7 +26,7 @@
   }
 
   .project-content {
-    @include outer-container(100%);
+    @include outer-container(from-indesign(1280));
 
     .copy {
       @include content-padding;
@@ -36,9 +36,31 @@
       width: 100%;
       display: block;
       &.half-size {
-        float: left;
-        width: 50%;
+        @include media(min-width $small-size) {
+          float: left;
+          width: 50%;
+        }
       }
+    }
+    .framed {
+      float: left;
+      width: 100%;
+      height: from-indesign(727);
+      position: relative;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 27%;
+      }
+    }
+    .padded {
+      margin: from-indesign(215) 0;
+       // from-indesign(57)
+    }
+    .half-size-group {
+      @include clearfix;
     }
   }
 
@@ -73,16 +95,22 @@
 }
 
 .project-page.brave-and-bold {
-  img[src*="-4"] {
-    background: #c2af73;
-    padding: 29%; // (100 - 43)/2)%
-  }
-  img[src*="-5"] {
-    background: black;
-    padding: 33%; // (100 - 34)/2)%
-  }
-  img[src*="-10"], img[src*="-11"] {
-    width: 50% !important;
+  // img[src*="-4"] {
+  //   background: #c2af73;
+  //   padding: 29%; // (100 - 43)/2)%
+  // }
+  @include media(min-width $small-size) {
+    img[src*="-8"], img[src*="-9"] {
+      height: from-indesign(637);
+      width: auto;
+      margin-top: from-indesign(135);
+    }
+    img[src*="-9"] {
+      float: right;
+    }
+    img[src*="-14"] {
+      // padding: from-indesign(206) 0 from-indesign(144);
+    }
   }
 }
 

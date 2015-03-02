@@ -1,3 +1,5 @@
+$DEBUG: false;
+
 // Bourbon settings
 $em-base: 21.3px;
 // $em-base: 18px;
@@ -21,27 +23,53 @@ $content-line-height: 1.7; // use for paragraphs and content
 $quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', Helvetica, sans-serif;
 
-$large: new-breakpoint(max-width 1680px 12);
-$medium: new-breakpoint(max-width 1280px 12);
-$small: new-breakpoint(max-width 750px 4);
-$tiny: new-breakpoint(max-width 500px 2);
+$large-size: 1680px;
+$medium-size: 1280px;
+$small-size: 750px;
+$tiny-size: 500px;
+
+$large: new-breakpoint(max-width $large-size 12);
+$medium: new-breakpoint(max-width $medium-size 12);
+$small: new-breakpoint(max-width $small-size 4);
+$tiny: new-breakpoint(max-width $tiny-size 2);
 
 // For IE we want scrollbars to auto-appear and disappear
 @-ms-viewport { width: device-width; }
 
+@mixin debug($string) {
+  @if $DEBUG {
+    &:before {
+      content: $string;
+      position: fixed;
+      color: white;
+      background: rgba(black, 0.5);
+      top: 0;
+      left: 0;
+      padding: 4px;
+      font-size: 12px;
+      z-index: 9999;
+    }
+  }
+}
+
 body {
+
   font-size: 0.8vw !important;
   @include media($large) {
     font-size: 1rem !important;
+    @include debug("large");
   }
   @include media($medium) {
     font-size: 1.5vw !important;
+    @include debug("medium");
   }
   @include media($small) {
     font-size: 2.7vw !important;
+    @include debug("small");
   }
   @include media($tiny) {
     font-size: 3.4vw !important;
+    @include debug("tiny");
   }
   .contact-page {
     font-size: 1.8vmin;
@@ -100,6 +128,13 @@ body.nano {
 
 @function capitalize($string) {
   @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+// Converts from indesign px size to ems
+// Use this because we measure values from InDesign and want to just copy the
+// values rather than doing crazy math.
+@function from-indesign($size) {
+  @return em($size * 1.115);
 }
 
 $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
