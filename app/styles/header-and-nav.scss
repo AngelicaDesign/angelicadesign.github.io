@@ -76,6 +76,7 @@
       padding: em(8);
       display: inline-block; // makes translate work
       transform: translateY(5%);
+      color: $medium-color;
     }
     &:first-child:before {
       content: ""; // bullet icon

@@ -282,11 +282,11 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-family: $quicksand;
   color: $brand-color;
-  margin: $heading-top-margin 0 em(10);
+  margin: $heading-top-margin 0 em(5);
 }
 
 p {
-  font-size: em(28);
+  font-size: em(23);
   line-height: $content-line-height;
-  margin: em(10) 0;
+  margin: em(5) 0;
 }

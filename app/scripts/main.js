@@ -4,7 +4,7 @@
   'use strict';
 
   $(document).ready(function () {
-    $('p').unorphanize(2);
+    $('p').unorphanize();
     $('.project .title').unorphanize();
     $('.project .type').unorphanize(2);
 
