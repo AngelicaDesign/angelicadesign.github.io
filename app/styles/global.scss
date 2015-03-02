@@ -213,6 +213,10 @@ $social: linkedin, behance, dribbble, instagram, pinterest, facebook, share;
     color: white;
     @include hover-effect;
   }
+  .at-sign {
+    display: inline-block;
+    transform: translate(0.12em, 0.05em);
+  }
 }
 
 

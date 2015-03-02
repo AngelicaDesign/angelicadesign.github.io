@@ -86,7 +86,6 @@
       display: inline-block;
       &:before {
         margin-right: em(7);
-        transform: translateY(-7%);
         @include media($small) {
           display: none;
         }
@@ -94,10 +93,10 @@
     }
     .phone:before {
       background-size: 80% !important;
-      transform: translateY(-7%);
+      transform: translateY(-9%);
     }
     .email:before {
-      transform: translateY(-1%);
+      transform: translateY(-6%);
     }
     .phone {
       margin-right: em(20);

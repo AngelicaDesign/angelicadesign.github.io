@@ -27,7 +27,7 @@ mixin nav(name)
     .heading Contact Info
     .contact-info
       .phone= CONFIG.phone
-      a.email(href='mailto:'+CONFIG.email)= CONFIG.email
+      a.email(href='mailto:'+CONFIG.email)!= CONFIG.emailHtml
     .social-buttons
       each url, name in CONFIG.social
         a.social-button(class=name, href=url)
