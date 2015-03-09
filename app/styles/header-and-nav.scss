@@ -83,6 +83,7 @@
     }
   }
   li a {
+    backface-visibility: hidden; // prevent jitter on transitions
     font-size: em(26);
     text-decoration: none;
     font-family: $quicksand;
