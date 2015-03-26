@@ -1,29 +1,33 @@
 .project-page {
-  .hero {
-    padding: 20%;
-    color: white;
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: center;
-    font-weight: bold;
-    line-height: $small-line-height;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    @include outer-container(100%);
+  .hero-image {
+    width: 100%;
   }
-  .title {
-    font-size: em(58);
-    @include media($small) {
-      font-size: em(46);
-    }
-  }
-  .project-type {
-    margin-top: em(10);
-    font-size: em(32);
-    font-family: $quicksand;
-  }
+  // old hero
+  // .hero {
+  //   padding: 20%;
+  //   color: white;
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   text-align: center;
+  //   font-weight: bold;
+  //   line-height: $small-line-height;
+  //   min-height: 80vh;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   @include outer-container(100%);
+  // }
+  // .title {
+  //   font-size: em(58);
+  //   @include media($small) {
+  //     font-size: em(46);
+  //   }
+  // }
+  // .project-type {
+  //   margin-top: em(10);
+  //   font-size: em(32);
+  //   font-family: $quicksand;
+  // }
 
   .project-content {
     @include outer-container(from-indesign(1280));
@@ -35,12 +39,6 @@
     img {
       width: 100%;
       display: block;
-      &.half-size {
-        @include media(min-width $small-size) {
-          float: left;
-          width: 50%;
-        }
-      }
     }
     .framed {
       float: left;
@@ -61,6 +59,12 @@
     }
     .half-size-group {
       @include clearfix;
+    }
+    .half-size-group img  {
+      @include media(min-width $small-size) {
+        float: left;
+        width: 50%;
+      }
     }
   }
 
@@ -92,25 +96,5 @@
     transform: translateY(-50%);
   }
 
-}
-
-.project-page.brave-and-bold {
-  // img[src*="-4"] {
-  //   background: #c2af73;
-  //   padding: 29%; // (100 - 43)/2)%
-  // }
-  @include media(min-width $small-size) {
-    img[src*="-8"], img[src*="-9"] {
-      height: from-indesign(637);
-      width: auto;
-      margin-top: from-indesign(135);
-    }
-    img[src*="-9"] {
-      float: right;
-    }
-    img[src*="-14"] {
-      // padding: from-indesign(206) 0 from-indesign(144);
-    }
-  }
 }
 

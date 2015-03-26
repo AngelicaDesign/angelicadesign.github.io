@@ -5,59 +5,33 @@ block vars
   - PROJ = 'brave-and-bold'
   - TYPE = 'Product Line ∙ Branding ∙ Logo ∙ UI/UX'
 
-block append head
-  style.
-    img[src*="-5"] {
-      padding: 38% !important;
-    }
-
 block project-content
   .copy
     .heading Design Challenge
     p The goal was to create a series of posters that work as a single unit to promote a concert hosted by Sacramento State Unique. The band Buyepongo plays upbeat music that draws influences from Afro-Cuban and Latin cultures. The logo was given.
     .heading Design Solution
     p The intention was to represent the band’s sound in a visual way as to inform the audience of the band’s characteristics. I drew influences from their stylized logo and traditional Latin folk art to create illustrations that set the tone for the concert. The illustrations have a lot of movement to suggest the upbeat rhythm and they are funky with a joyful energy. The chosen colors refer to the Latin culture and the texture creates a rustic feel and adds depth.
-  .half-size-group
-    +project-half(2)
-    +project-half(3)
   .framed(style='background: #d3c59a')
-    +project(4,'png')
+    +project(2,'png')
   .framed(style='background: black')
-    +project(5,'png')
+    +project(4,'png')(style={padding: '38%'})
+  +project(3)
+  +project(5)
   +project(6)
   +project(7)
-  .half-size-group
-    +project-half(8)
-    +project-half(9)
-  .half-size-group.padded
-    +project-half(10)
-    +project-half(11)
-  .half-size-group
-    +project-half(12)
-    +project-half(13)
+  +project(8)
+  +project(9)
   .padded
+    +project(10)
+    +project(11)
+  +project(12)
+  .half-size-group
+    +project(13)
     +project(14)
-  .padded
+  .half-size-group
     +project(15)
-  .half-size-group.padded
-    +project-half(16)
-    +project-half(17)
-  +project(18)
+    +project(16)
+  .half-size-group
+    +project(17)
+    +project(18)
   +project(19)
-  +project(20)
-  +project(21)
-  +project(22)
-  +project(23)
-  .half-size-group
-    +project-half(24)
-    +project-half(25)
-  .half-size-group
-    +project-half(26)
-    +project-half(27)
-  .half-size-group
-    +project-half(28)
-    +project-half(29)
-  .half-size-group
-    +project-half(30)
-    +project-half(31)
-

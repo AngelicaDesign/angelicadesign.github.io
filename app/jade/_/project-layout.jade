@@ -11,14 +11,13 @@ mixin project(num, type)
   else
     img(src='/images/projects/#{PROJ}/#{PROJ}-#{num}.#{type}')&attributes(attributes)
 
-mixin project-half(num, type)
-  +project(num, type)(class='half-size')
-
 block content
   .project-page(class=PROJ)
-    .hero(style={'background-image': 'url(/images/projects/#{PROJ}/#{PROJ}-1.jpg)'})
-      h1.title= TITLE
-      .project-type= TYPE
+    //- old hero
+    //- .hero(style={'background-image': 'url(/images/projects/#{PROJ}/#{PROJ}-1.jpg)'})
+      //- h1.title= TITLE
+      //- .project-type= TYPE
+    img.hero-image(src='/images/projects/#{PROJ}/#{PROJ}-1.jpg')
     .project-content
       block project-content
     .project-nav
