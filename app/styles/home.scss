@@ -27,10 +27,12 @@
     float: left;
     width: 20%;
     @include media($large) {
-      width: 25%;
+      width: 33.33%;
+      // width: 25%; // TODO: change back to this
     }
     @include media($small) {
-      width: 50%;
+      width: 100%;
+      // width: 25%; // TODO: change back to this
     }
 
     img {
