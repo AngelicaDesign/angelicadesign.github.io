@@ -17,8 +17,13 @@ block content
     +project(1)(class='hero-image')
     .project-content
       block project-content
-    //- .project-nav
-    //-   a.social-button.share(href=CONFIG.social.share)
-    //-   .previous-and-next
-    //-     a.project-previous(href='#')
-    //-     a.project-next(href='#')
+    .project-nav
+      a.social-button.share.addthis_button_compact(href='#' target='_blank')
+        //- We need the span tag so addthis doesn't add it's own share image
+        //- http://support.addthis.com/customer/portal/articles/381236-custom-buttons
+        span
+      .previous-and-next
+        - var isPrev = PREV ? '' : 'disabled'
+        - var isNext = NEXT ? '' : 'disabled'
+        a.project-previous(href='/project/#{PREV}' class=isPrev)
+        a.project-next(href='/project/#{NEXT}' class=isNext)
