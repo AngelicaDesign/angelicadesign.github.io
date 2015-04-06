@@ -52,14 +52,41 @@ gulp.task('jshint', function () {
 });
 
 // Optimize Images
-gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
+gulp.task('images', ['images-large', 'images-medium', 'images-small'], function () {
+  return gulp.src(['app/images/**/*', '!app/images/projects'])
     // .pipe($.cache($.imagemin({
     //   progressive: true,
     //   interlaced: true
     // })))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}));
+});
+
+var imgSrc = 'app/images/projects/**/*.@(png|jpg)';
+var imgDst = gulp.dest('dist/images/projects');
+var addSuffix = function (suffix) {
+  return $.rename(function (path) { path.basename += '-'+suffix; })
+};
+
+gulp.task('images-small', function () {
+  return gulp.src(imgSrc)
+    .pipe($.imageResize({ width : 320 }))
+    .pipe(addSuffix('small'))
+    .pipe(imgDst);
+});
+
+gulp.task('images-medium', function () {
+  return gulp.src(imgSrc)
+    .pipe($.imageResize({ width : 750 }))
+    .pipe(addSuffix('medium'))
+    .pipe(imgDst);
+});
+
+gulp.task('images-large', function () {
+  return gulp.src(imgSrc)
+    .pipe($.imageResize({ width : 1680 }))
+    .pipe(addSuffix('large'))
+    .pipe(imgDst);
 });
 
 // Copy All Files At The Root Level (app)

@@ -6,10 +6,7 @@ extends layout
 //-   - TYPE = CONFIG.projects[PROJ_INDEX].type
 
 mixin project(num, type)
-  if !type
-    img(src='/images/projects/#{PROJ}/#{PROJ}-#{num}.jpg')&attributes(attributes)
-  else
-    img(src='/images/projects/#{PROJ}/#{PROJ}-#{num}.#{type}')&attributes(attributes)
+  +img('projects/'+PROJ+'/'+PROJ+'-'+num, type)
 
 block content
   .project-page(class=PROJ)
@@ -17,7 +14,7 @@ block content
     //- .hero(style={'background-image': 'url(/images/projects/#{PROJ}/#{PROJ}-1.jpg)'})
       //- h1.title= TITLE
       //- .project-type= TYPE
-    img.hero-image(src='/images/projects/#{PROJ}/#{PROJ}-1.jpg')
+    +project(1)(class='hero-image')
     .project-content
       block project-content
     //- .project-nav
