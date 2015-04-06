@@ -12,7 +12,7 @@ block prepend header
 mixin project(index)
   - var proj = CONFIG.projects[index];
   a.project(href='/project/'+proj.name)
-    img(src='/images/project-thumbnails/'+proj.name+'.jpg')
+    +img('project-thumbnails/'+proj.name)
     .active
       .title!= proj.title
       .type= proj.type

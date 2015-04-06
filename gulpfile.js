@@ -53,7 +53,7 @@ gulp.task('jshint', function () {
 
 // Optimize Images
 gulp.task('images', ['images-large', 'images-medium', 'images-small'], function () {
-  return gulp.src(['app/images/**/*', '!app/images/projects'])
+  return gulp.src(['app/images/**/*'])
     // .pipe($.cache($.imagemin({
     //   progressive: true,
     //   interlaced: true
@@ -62,31 +62,34 @@ gulp.task('images', ['images-large', 'images-medium', 'images-small'], function 
     .pipe($.size({title: 'images'}));
 });
 
-var imgSrc = 'app/images/projects/**/*.@(png|jpg)';
-var imgDst = gulp.dest('dist/images/projects');
-var addSuffix = function (suffix) {
-  return $.rename(function (path) { path.basename += '-'+suffix; })
-};
+function resizeImages(src, dest) {
+  var dest = gulp.dest(dest);
+  var addSuffix = function (suffix) {
+    return $.rename(function (path) { path.basename += '-'+suffix; })
+  };
 
-// 'app/jade/_/layout.jade' uses these image sizes
-gulp.task('images-small', function () {
-  return gulp.src(imgSrc)
-    .pipe($.imageResize({ width : 320 }))
-    .pipe(addSuffix('small'))
-    .pipe(imgDst);
-});
-gulp.task('images-medium', function () {
-  return gulp.src(imgSrc)
-    .pipe($.imageResize({ width : 750 }))
-    .pipe(addSuffix('medium'))
-    .pipe(imgDst);
-});
-gulp.task('images-large', function () {
-  return gulp.src(imgSrc)
-    .pipe($.imageResize({ width : 1680 }))
-    .pipe(addSuffix('large'))
-    .pipe(imgDst);
-});
+  // 'app/jade/_/layout.jade' uses these image sizes
+  gulp.task('images-small', function () {
+    return gulp.src(src)
+      .pipe($.imageResize({ width : 320 }))
+      .pipe(addSuffix('small'))
+      .pipe(dest);
+  });
+  gulp.task('images-medium', function () {
+    return gulp.src(src)
+      .pipe($.imageResize({ width : 750 }))
+      .pipe(addSuffix('medium'))
+      .pipe(dest);
+  });
+  gulp.task('images-large', function () {
+    return gulp.src(src)
+      .pipe($.imageResize({ width : 1680 }))
+      .pipe(addSuffix('large'))
+      .pipe(dest);
+  });
+}
+resizeImages('app/images/projects/**/*.@(png|jpg)','dist/images/projects');
+resizeImages('app/images/project-thumbnails/*.@(png|jpg)','dist/images/project-thumbnails');
 
 // Copy All Files At The Root Level (app)
 gulp.task('copy', function () {
