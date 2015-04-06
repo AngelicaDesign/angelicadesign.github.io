@@ -68,20 +68,19 @@ var addSuffix = function (suffix) {
   return $.rename(function (path) { path.basename += '-'+suffix; })
 };
 
+// 'app/jade/_/layout.jade' uses these image sizes
 gulp.task('images-small', function () {
   return gulp.src(imgSrc)
     .pipe($.imageResize({ width : 320 }))
     .pipe(addSuffix('small'))
     .pipe(imgDst);
 });
-
 gulp.task('images-medium', function () {
   return gulp.src(imgSrc)
     .pipe($.imageResize({ width : 750 }))
     .pipe(addSuffix('medium'))
     .pipe(imgDst);
 });
-
 gulp.task('images-large', function () {
   return gulp.src(imgSrc)
     .pipe($.imageResize({ width : 1680 }))

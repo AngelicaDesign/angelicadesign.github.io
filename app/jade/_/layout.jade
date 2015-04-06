@@ -3,7 +3,8 @@ block vars
 mixin img(path, type)
   - var base = '/images/'+path
   - var type = type || 'jpg'
-  img(src='#{base}-medium.#{type}' srcset='#{base}-large.#{type} 1680w, #{base}-medium.#{type} 750w, #{base}-small.#{type} 320w')&attributes(attributes)
+  //- gulpfile.js generates these images
+  img(src='#{base}-medium.#{type}' srcset='#{base}.#{type} 2800w, #{base}-large.#{type} 1680w, #{base}-medium.#{type} 750w, #{base}-small.#{type} 320w')&attributes(attributes)
 
 doctype html
 html(lang='en')

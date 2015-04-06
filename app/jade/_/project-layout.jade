@@ -6,7 +6,7 @@ extends layout
 //-   - TYPE = CONFIG.projects[PROJ_INDEX].type
 
 mixin project(num, type)
-  +img('projects/'+PROJ+'/'+PROJ+'-'+num, type)
+  +img('projects/'+PROJ+'/'+PROJ+'-'+num, type)&attributes(attributes)
 
 block content
   .project-page(class=PROJ)
