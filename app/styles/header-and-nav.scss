@@ -118,13 +118,10 @@
     visibility: hidden;
     opacity: 0;
   }
-  a.contact-link:hover:after {
+  a.contact-link:hover:after, a.contact-link.active:after {
     visibility: visible;
     opacity: 1;
     top: 110%;
-  }
-  a.contact-link.active:hover:after {
-    visibility: hidden;
   }
 }
 
