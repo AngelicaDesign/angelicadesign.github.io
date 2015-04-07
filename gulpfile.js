@@ -62,34 +62,31 @@ gulp.task('images', ['images-large', 'images-medium', 'images-small'], function 
     .pipe($.size({title: 'images'}));
 });
 
-function resizeImages(src, dest) {
-  var dest = gulp.dest(dest);
-  var addSuffix = function (suffix) {
-    return $.rename(function (path) { path.basename += '-'+suffix; })
-  };
+var imgSrc = 'app/images/@(projects|project-thumbnails)/**/*.@(png|jpg)';
+var imgDest = gulp.dest('dist/images');
+var addSuffix = function (suffix) {
+  return $.rename(function (path) { path.basename += '-'+suffix; })
+};
 
-  // 'app/jade/_/layout.jade' uses these image sizes
-  gulp.task('images-small', function () {
-    return gulp.src(src)
-      .pipe($.imageResize({ width : 320 }))
-      .pipe(addSuffix('small'))
-      .pipe(dest);
-  });
-  gulp.task('images-medium', function () {
-    return gulp.src(src)
-      .pipe($.imageResize({ width : 750 }))
-      .pipe(addSuffix('medium'))
-      .pipe(dest);
-  });
-  gulp.task('images-large', function () {
-    return gulp.src(src)
-      .pipe($.imageResize({ width : 1680 }))
-      .pipe(addSuffix('large'))
-      .pipe(dest);
-  });
-}
-resizeImages('app/images/projects/**/*.@(png|jpg)','dist/images/projects');
-resizeImages('app/images/project-thumbnails/*.@(png|jpg)','dist/images/project-thumbnails');
+// 'app/jade/_/layout.jade' uses these image sizes
+gulp.task('images-small', function () {
+  return gulp.src(imgSrc)
+    .pipe($.imageResize({ width : 320 }))
+    .pipe(addSuffix('small'))
+    .pipe(imgDest);
+});
+gulp.task('images-medium', function () {
+  return gulp.src(imgSrc)
+    .pipe($.imageResize({ width : 750 }))
+    .pipe(addSuffix('medium'))
+    .pipe(imgDest);
+});
+gulp.task('images-large', function () {
+  return gulp.src(imgSrc)
+    .pipe($.imageResize({ width : 1680 }))
+    .pipe(addSuffix('large'))
+    .pipe(imgDest);
+});
 
 // Copy All Files At The Root Level (app)
 gulp.task('copy', function () {
