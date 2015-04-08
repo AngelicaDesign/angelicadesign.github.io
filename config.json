@@ -4,6 +4,12 @@
   "email": "angelicadesign1@gmail.com",
   "emailHtml": "angelicadesign1<span class='at-sign'>@</span>gmail.com",
   "copyright": "Website designed by Angelica Design ©2015. All Rights Reserved.",
+  "images": {
+    "extraLarge": "2800",
+    "large": "1680",
+    "medium": "720",
+    "small": "320"
+  },
   "projects": [
     {
       "name": "brave-and-bold",
