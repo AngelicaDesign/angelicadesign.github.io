@@ -136,7 +136,7 @@ gulp.task('html', function () {
 
   return gulp.src([
       'app/jade/**/*.jade',
-      '!app/jade/_'
+      '!app/jade/_/*'
     ])
     .pipe($.jade({ pretty: true, locals: LOCALS }))
     .pipe(assets)
