@@ -73,18 +73,21 @@ gulp.task('images-small', function () {
   return gulp.src(imgSrc)
     .pipe($.imageResize({ width : 320 }))
     .pipe(addSuffix('small'))
+    .pipe($.print())
     .pipe(imgDest);
 });
 gulp.task('images-medium', function () {
   return gulp.src(imgSrc)
     .pipe($.imageResize({ width : 750 }))
     .pipe(addSuffix('medium'))
+    .pipe($.print())
     .pipe(imgDest);
 });
 gulp.task('images-large', function () {
   return gulp.src(imgSrc)
     .pipe($.imageResize({ width : 1680 }))
     .pipe(addSuffix('large'))
+    .pipe($.print())
     .pipe(imgDest);
 });
 
