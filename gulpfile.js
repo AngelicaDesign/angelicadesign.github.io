@@ -52,7 +52,8 @@ gulp.task('jshint', function () {
 });
 
 // Optimize Images
-gulp.task('images', ['images-large', 'images-medium', 'images-small'], function () {
+gulp.task('images', ['respond'], function () {
+// gulp.task('images', 'resize', function () {
   return gulp.src(['app/images/**/*'])
     // .pipe($.cache($.imagemin({
     //   progressive: true,
@@ -67,6 +68,33 @@ var imgDest = gulp.dest('dist/images');
 var addSuffix = function (suffix) {
   return $.rename(function (path) { path.basename += '-'+suffix; })
 };
+
+gulp.task('respond', function () {
+  var config = {
+    '**/*': [
+      {
+        width: 320,
+        rename: {suffix: '-small'}
+      }, {
+        width: 750,
+        rename: {suffix: '-medium'}
+      }, {
+        width: 1680,
+        rename: {suffix: '-large'}
+      }
+      // TODO: figure out way to ignore project files in images task
+      // so we can set a max size below.
+      // }, {
+      //   width: 2800
+      //   // Keep old name
+      // }
+    ]
+  };
+  return gulp.src('app/images/@(projects|project-thumbnails)/**/*.@(png|jpg)')
+    .pipe($.responsive(config, { errorOnEnlargement: false }))
+    .pipe($.print())
+    .pipe(imgDest);
+});
 
 // 'app/jade/_/layout.jade' uses these image sizes
 gulp.task('images-small', function () {
@@ -89,6 +117,10 @@ gulp.task('images-large', function () {
     .pipe(addSuffix('large'))
     .pipe($.print())
     .pipe(imgDest);
+});
+
+gulp.task('resize', function (cb) {
+  runSequence('images-small', 'images-medium', 'images-large', cb);
 });
 
 // Copy All Files At The Root Level (app)
@@ -199,7 +231,7 @@ gulp.task('serve', ['styles', 'html'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'fonts', 'copy'], 'images', cb);
 });
 
 // Run PageSpeed Insights
@@ -213,18 +245,17 @@ gulp.task('pagespeed', function (cb) {
   }, cb);
 });
 
-gulp.task('build', function (cb) {
-    runSequence('copy', cb);
-});
-
 var options = {
     message: 'Update ' + new Date().toISOString() + ' [skip ci]',
     branch: 'master'
 };
+
 gulp.task('deploy', ['default'], function () {
+// gulp.task('deploy', function () {
   return gulp.src('dist/**/*')
     .pipe($.ghPages(options));
 });
+
 
 // Load custom tasks from the `tasks` directory
 // try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
