@@ -22,9 +22,14 @@
       "type": "Print ∙ Illustration"
     },
     {
-      "name": "native-museum-icons",
-      "title": "Native Museum",
-      "type": "Logos ∙ Branding ∙ UI/UX"
+      "name": "logos",
+      "title": "Logos",
+      "type": "Illustration ∙ Branding"
+    },
+    {
+      "name": "intertwine",
+      "title": "Intertwine Organization",
+      "type": "Print ∙ Infographic ∙ UI/UX"
     },
     {
       "name": "ca-lighting-technology-center",
@@ -37,13 +42,8 @@
       "type": "Print ∙ Illustration"
     },
     {
-      "name": "intertwine-magazine",
-      "title": "Intertwine Magazine",
-      "type": "Print ∙ Infographic ∙ UI/UX"
-    },
-    {
-      "name": "alice-in-wonderland",
-      "title": "Alice In Wonderland",
+      "name": "crave",
+      "title": "Crave Postcards",
       "type": "Print ∙ Handlettering"
     },
     {
@@ -52,24 +52,29 @@
       "type": "Print ∙ App ∙ Video"
     },
     {
-      "name": "shoki-ramon-house",
-      "title": "Shoki Ramon House",
-      "type": "Logo ∙ Branding ∙ Print ∙ App"
-    },
-    {
-      "name": "just-life-for-pre-teens",
-      "title": "Just Life For Pre Teens",
-      "type": "UI/UX ∙ App"
-    },
-    {
       "name": "freelance-work",
       "title": "Freelance Work",
       "type": "Print ∙ Logos ∙ Branding"
     },
     {
+      "name": "alice-in-wonderland",
+      "title": "Alice In Wonderland",
+      "type": "Print ∙ Handlettering"
+    },
+    {
       "name": "volunteer-work",
       "title": "Volunteer Work",
       "type": "Speaker Slide Shows ∙ Print"
+    },
+    {
+      "name": "-",
+      "title": "-",
+      "type": "-"
+    },
+    {
+      "name": "native-museum-icons",
+      "title": "Native Museum",
+      "type": "Logos ∙ Branding ∙ UI/UX"
     }
   ],
   "social": {
